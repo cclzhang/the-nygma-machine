@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import axios from 'axios';
+import LandingPage from './components/LandingPage';
 
 class App extends Component {
   constructor(){
@@ -46,7 +47,7 @@ class App extends Component {
     console.log("app.js rendered")
     return (
       <div className="App">
-        <h1>Hello World</h1>
+        <LandingPage />
       </div>
     );
   }
