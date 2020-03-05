@@ -27,6 +27,11 @@ class LandingPage extends Component {
         e.preventDefault();
 
         
+
+        this.setState({
+            userName: '',
+            userQuestion: [],
+        })
     }
 
     render() {
@@ -41,9 +46,9 @@ class LandingPage extends Component {
                 </header>
                 <form action="" onSubmit="handleFormSubmit">
                     <label htmlFor="">What's your name?</label>
-                    <input type="text" placeholder="Batman" id="userName" value={this.state.userName}/>
+                    <input type="text" placeholder="Batman" id="userName" />
                     <label htmlFor="">Ask your question</label>
-                    <input type="text" placeholder="Does the Joker think I'm cute?" id="userQuestion" value={this.state.userQuestion}/>
+                    <input type="text" placeholder="Does the Joker think I'm cute?" id="userQuestion" />
                     <button type="submit">Submit</button>
                 </form>
             </main>
