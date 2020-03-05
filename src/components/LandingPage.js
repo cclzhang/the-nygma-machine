@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../styles/LandingPage.css'
 
 class LandingPage extends Component {
     constructor(){
