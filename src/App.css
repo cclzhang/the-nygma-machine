@@ -4,7 +4,7 @@
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
@@ -12,12 +12,19 @@ body {
 }
 
 .wrapper {
+  max-width: 800px;
   width: 60%;
-  height: 100%;
   margin: 0 auto;
 }
 
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
 a {
+  text-decoration: none;
   color: inherit;
 }
 
@@ -25,12 +32,19 @@ a:hover{
   outline: none;
 }
 
+ul, 
+ol, 
 li {
-  list-style: none;
+    list-style: none;
+}
+
+input, 
+button {
+    border: none;
+    box-shadow: none;
+    background: none;
 }
 
 button {
-  background: none;
-  border: none;
   cursor: pointer;
 }
