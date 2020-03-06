@@ -24,10 +24,27 @@ class LandingPage extends Component {
         })
     }
 
+    handleNameChange = (e) => {
+        this.setState({
+            userName: e.target.value,
+        })
+    }
+
+    handleQuestionChange = (e) => {
+        const questionString= e.target.value;
+        // taking the question and converting it to an array
+        const questionArray = questionString.trim().split(' ');
+        
+        this.setState({
+            userQuestion: questionArray,
+        })
+    }
+
     handleFormSubmit = (e) => {
         e.preventDefault();
 
-        
+        console.log('name:', this.state.userName);
+        console.log('question:', this.state.userQuestion);
     }
 
     render() {
@@ -40,11 +57,11 @@ class LandingPage extends Component {
                         <img src="" alt=""/>
                     </div>
                 </header>
-                <form action="" onSubmit="handleFormSubmit">
+                <form action="" onSubmit={this.handleFormSubmit}>
                     <label htmlFor="">What's your name?</label>
-                    <input type="text" placeholder="Batman" id="userName" value={this.state.userName}/>
+                    <input type="text" placeholder="Batman" id="userName" onChange={this.handleNameChange} />
                     <label htmlFor="">Ask your question</label>
-                    <input type="text" placeholder="Does the Joker think I'm cute?" id="userQuestion" value={this.state.userQuestion}/>
+                    <input type="text" placeholder="Does the Joker think I'm cute?" id="userQuestion" onChange={this.handleQuestionChange}/>
                     <button type="submit">Submit</button>
                 </form>
             </main>
