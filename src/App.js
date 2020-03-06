@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import LandingPage from './components/LandingPage';
 import ResultsPage from './components/ResultsPage';
+import Maze from './components/Maze';
 
 class App extends Component {
   constructor(){
@@ -27,7 +28,7 @@ class App extends Component {
     return (
       <div className="App">
         <LandingPage />
-
+        <Maze />
         <ResultsPage />
       </div>
     );
