@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import axios from 'axios';
 import LandingPage from './components/LandingPage';
+import Maze from './components/Maze'
 
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
     return (
       <div className="App">
         <LandingPage />
+        <Maze />
       </div>
     );
   }
