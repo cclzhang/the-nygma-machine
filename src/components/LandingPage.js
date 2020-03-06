@@ -9,19 +9,20 @@ class LandingPage extends Component {
         this.state = {
             userName: '',
             userQuestion: [],
+            quote: '',
         }
     }
 
     componentDidMount() {
-        axios({
-            url: `https://api.adviceslip.com/advice`,
-            method: 'GET',
-            responseType: 'json'
-        }).then((response) => {
-            console.log(response);
-        }).catch((err) => {
-            console.log(err);
-        })
+    //     axios({
+    //         url: `https://api.adviceslip.com/advice`,
+    //         method: 'GET',
+    //         responseType: 'json'
+    //     }).then((response) => {
+    //         console.log(response);
+    //     }).catch((err) => {
+    //         console.log(err);
+    //     })
     }
 
     handleNameChange = (e) => {
@@ -43,8 +44,22 @@ class LandingPage extends Component {
     handleFormSubmit = (e) => {
         e.preventDefault();
 
+        // test log 
         console.log('name:', this.state.userName);
         console.log('question:', this.state.userQuestion);
+
+        // rng
+        const randomIndex = Math.floor(Math.random() * 3);
+        console.log(randomIndex);
+
+        const lookupValue = this.state.userQuestion;
+
+
+        axios({
+            url: `https://api.adviceslip.com/advice`,
+        }).then((response) => {
+            console.log(response);
+        });
     }
 
     render() {
