@@ -1,0 +1,18 @@
+.nygmaContainer {
+  text-align: center;
+}
+
+.nygmaContainer button {
+  margin: 10px;
+  background-color: rgb(124, 140, 153);
+  padding: 10px 20px;
+}
+
+.quoteContainer {
+  margin-top: 50px;
+}
+
+.quote {
+  padding: 50px;
+  background-color: lightgrey;
+}
