@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import '../styles/LandingPage.css'
+import ResultsPage from './ResultsPage';
 
 class LandingPage extends Component {
   constructor(){
@@ -89,22 +90,26 @@ class LandingPage extends Component {
   
   render() {
     return (
-      <main className="wrapper">
-        <header>
-          <h1>Welcome to the Nygma Machine</h1>
-          <h2>Ask your question for some advice</h2>
-          <div className="imageContainer">
-            <img src="" alt=""/>
-          </div>
-        </header>
-        <form action="" onSubmit={this.handleFormSubmit}>
-          <label htmlFor="">What's your name?</label>
-          <input type="text" placeholder="Batman" id="userName" onChange={this.handleNameChange} />
-          <label htmlFor="">Ask your question</label>
-          <input type="text" placeholder="Does the Joker think I'm cute?" id="userQuestion" onChange={this.handleQuestionChange}/>
-          <button type="submit">Submit</button>
-        </form>
-      </main>
+      <Fragment>
+        <main className="wrapper">
+          <header>
+            <h1>Welcome to the Nygma Machine</h1>
+            <h2>Ask your question for some advice</h2>
+            <div className="imageContainer">
+              <img src="" alt=""/>
+            </div>
+          </header>
+          <form action="" onSubmit={this.handleFormSubmit}>
+            <label htmlFor="">What's your name?</label>
+            <input type="text" placeholder="Batman" id="userName" onChange={this.handleNameChange} />
+            <label htmlFor="">Ask your question</label>
+            <input type="text" placeholder="Does the Joker think I'm cute?" id="userQuestion" onChange={this.handleQuestionChange}/>
+            <button type="submit">Submit</button>
+          </form>
+        </main>
+
+        <ResultsPage quote={this.state.quote}/>
+      </Fragment>
     )
   }
 }
