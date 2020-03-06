@@ -94,7 +94,7 @@ class LandingPage extends Component {
           <h1>Welcome to the Nygma Machine</h1>
           <h2>Ask your question for some advice</h2>
           <div className="imageContainer">
-              <img src="" alt=""/>
+            <img src="" alt=""/>
           </div>
         </header>
         <form action="" onSubmit={this.handleFormSubmit}>
