@@ -2,11 +2,13 @@ import React, {Component} from 'react';
 import './App.css';
 import axios from 'axios';
 import LandingPage from './components/LandingPage';
+import ResultsPage from './components/ResultsPage';
 
 class App extends Component {
   constructor(){
     console.log("app.js constructed")
     super();
+    
     this.state = {
 
     }
@@ -14,33 +16,10 @@ class App extends Component {
 
   componentDidUpdate(){
     console.log("app.js updated")
-    
   }
 
   componentDidMount(){
     console.log("app.js mounted")
-
-    axios({
-      url: `https://api.adviceslip.com/advice`,
-      method:'GET',
-      responseType: 'json'
-    }).then((response) => {
-      console.log(response);
-    }).catch((err) => {
-      console.log(err);
-    })
-
-    // ********* axios call using search term entered from user input
-    // const getAdviceSearch = (searchTerm) => {
-    //   axios({
-    //     url: `https://api.adviceslip.com/advice/search/${searchTerm}`,
-    //     method:'GET',
-    //     responseType: 'json'
-    //   }).then((response) => {
-    //     console.log(response);
-    //   })
-    // }
-
   }
   
   render(){
@@ -48,6 +27,8 @@ class App extends Component {
     return (
       <div className="App">
         <LandingPage />
+
+        <ResultsPage />
       </div>
     );
   }
