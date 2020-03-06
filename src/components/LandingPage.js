@@ -57,8 +57,8 @@ class LandingPage extends Component {
                 "the", "to", "and", "then",
                 // pronouns
                 "i", "i'm", "me", "you", "them", "they",
-                // grammar
-                "!", "?", "'", "\"",
+                // grammar (revist this)
+                "!", , "'", "\"",
             ]
             // 
             const keyWord = questionStringArray[randomIndex];
