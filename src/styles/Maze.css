@@ -1,0 +1,17 @@
+.maze {
+    margin: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    margin: 10px;
+}
+
+button {
+    border: 2px solid pink;
+    padding: 10px;
+}
