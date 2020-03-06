@@ -10,31 +10,32 @@ class Maze extends Component {
   }
 
   componentDidMount(){
-    const canvas = this.refs.maze;
-    //The game board 1 = walls, 0 = path
-  
-    const board = [
-      [1, 0, 1, 1, 1, 1, 1, 1, 0, 1],
-      [1, 0, 0, 0, 0, 0, 1, 0, 0, 1],
-      [1, 1, 0, 1, 1, 0, 0, 0, 1, 1],
-      [0, 1, 1, 1, 1, 0, 1, 0, 0, 1],
-      [0, 0, 1, 0, 0, 0, 1, 1, 1, 1],
-      [1, 0, 1, 0, 1, 0, 1, 0, 0, 0],
-      [1, 0, 0, 0, 1, 0, 1, 0, 1, 1],
-      [1, 0, 1, 0, 1, 1, 1, 0, 0, 1],
-      [1, 0, 1, 0, 0, 0, 0, 0, 1, 1],
-      [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-    ];
-  
-  //Draw the game board
+    const canvas = this.refs.canvas;
     const ctx = canvas.getContext('2d');
-    ctx.fillStyle = "salmon";
-    //Loop through the board array drawing the walls and the goal
-    for (let y = 0; y < board.length; y++) {
-      for (let x = 0; x < board[y].length; x++) {
-        //Draw a wall
-        if (board[y][x] === 1) {
-          ctx.fillRect(x * 41, y * 41, 35, 35);
+    const maze = [
+      [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1],
+      [1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1],
+      [1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0],
+      [1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1],
+      [1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1],
+      [1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1],
+      [1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1],
+      [1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1],
+      [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1],
+      [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    ]
+
+    for (let y = 0; y < maze.length; y++) {
+      for (let x = 0; x < maze[y].length; x++) {
+        if (maze[y][x] === 1) {
+          ctx.fillStyle = "darkgreen";
+          ctx.fillRect(x * 50, y * 50, 50, 50);
+        }
+        else if (maze[y][x] === -1) {
+          ctx.fillStyle = "white";
+          ctx.fillRect(x * 50, y * 50, 50, 50);
         }
       }
     }
@@ -43,7 +44,7 @@ class Maze extends Component {
     return(
       <div className="maze">
         <h3>maze is here</h3>
-        <canvas ref="maze" width="400px" height="400px"></canvas>
+        <canvas ref="canvas" width="600px" height="600px"></canvas>
         <button onClick="">take me to next page</button>
       </div>
     )
