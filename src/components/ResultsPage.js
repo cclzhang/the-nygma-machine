@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 
 class ResultsPage extends Component {
-  contructor() {
+  constructor() {
     super()
 
     this.state = {
@@ -14,7 +14,7 @@ class ResultsPage extends Component {
   render() {
     return (
       <Fragment>
-        <div className="nygma-container">
+        <div className="nygmaContainer">
           {/* image here :) - image of Nygma Machine
             will need to figure out what the Nygma Machine looks  */}
           <button type="button">Play Again?</button>
@@ -27,6 +27,6 @@ class ResultsPage extends Component {
       </Fragment>
     )
   }
-
-
 }
+
+export default ResultsPage;

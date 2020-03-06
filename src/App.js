@@ -2,11 +2,13 @@ import React, {Component} from 'react';
 import './App.css';
 import axios from 'axios';
 import LandingPage from './components/LandingPage';
+import ResultsPage from './components/ResultsPage';
 
 class App extends Component {
   constructor(){
     console.log("app.js constructed")
     super();
+    
     this.state = {
 
     }
@@ -25,6 +27,8 @@ class App extends Component {
     return (
       <div className="App">
         <LandingPage />
+
+        <ResultsPage />
       </div>
     );
   }
