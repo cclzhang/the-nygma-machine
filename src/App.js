@@ -3,32 +3,88 @@ import './App.css';
 import axios from 'axios';
 import LandingPage from './components/LandingPage';
 import Maze from './components/Maze'
+import ResultsPage from './components/ResultsPage';
 
 
 class App extends Component {
   constructor(){
-    console.log("app.js constructed")
     super();
 
     this.state = {
-
+      isLandingShown: true,
+      isMazeShown: false,
+      isResultsShown: false,
+      quote: '',
     }
   }
 
-  componentDidUpdate(){
-    console.log("app.js updated")
+  storeUserQuestion = (e, question) => {
+    e.preventDefault();
+
+    // (recursion function)
+    // we use the randomIndex variable to choose a random word from the user's question string array
+    // we use the 'badWords' array to remove common words from the axios lookup value
+    // if the randomly generated word exists in the badWords array, it'll rerun the function to find a new random word in the user's question string array
+    // if the randomly generated word doesn't exist in the badWords array, it'll be used as the lookup value in the axios call
+    const getRandomWord = (question) => {
+      const randomIndex = Math.floor(Math.random() * question.length);
+      const badWords = [
+        // common
+        "the", "to", "and", "then", "this", "of", "is", "if", "it", "so", "a", "is", "maybe", "on", "for",
+        // pronouns
+        "i", "i'm", "me", "you", "them", "they", "we", "it",
+        // grammar (revist this)
+        "!", "'", "\"",
+      ]
+
+      const keyWord = question[randomIndex];
+      const keyWordLookup = badWords.includes(keyWord);
+
+      if (keyWordLookup === false) {
+        return keyWord;
+      }
+
+      getRandomWord(question);
+    }
+
+    // storing the lookup value into a variable, used in the axios call
+    const returnedKeyword = getRandomWord(question);
+
+    axios({
+      url: `https://api.adviceslip.com/advice/search/${returnedKeyword}`,
+    }).then((response) => {
+
+      // if the initial axios call doesn't have a quote for the lookup value, it'll generate a random advice string
+      // otherwise, the axios call will return a random advice string related to the lookup value
+      // in both instances, the random advice string is stored in state, to be returned to the App.js component
+      if (response.data.message) {
+        axios({
+          url: 'https://api.adviceslip.com/advice',
+        }).then((response) => {
+          this.setState({
+            quote: response.data.slip.advice
+          });
+        })
+
+      } else {
+        const randomIndex = Math.floor(Math.random() * response.data.slips.length);
+        this.setState({
+          quote: response.data.slips[randomIndex].advice
+        });
+      }
+    });
   }
 
-  componentDidMount(){
-    console.log("app.js mounted")
-  }
+  
   
   render(){
-    console.log("app.js rendered")
     return (
       <div className="App">
-        <LandingPage />
-        <Maze />
+        {/* {this.state.isLandingShown && this.state.isMazeShown === false && this.state.isResultsShown === false ? <LandingPage /> : null } */}
+        {this.state.isLandingShown ? <LandingPage storeUserQuestion={this.storeUserQuestion} />
+        : this.state.isMazeShown ? <Maze />
+        : this.state.isResultsShown ? <ResultsPage />
+        : null }
       </div>
     );
   }
