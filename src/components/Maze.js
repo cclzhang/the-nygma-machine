@@ -45,7 +45,7 @@ class Maze extends Component {
       <div className="maze">
         <h3>maze is here</h3>
         <canvas ref="canvas" width="600px" height="600px"></canvas>
-        <button onClick="">take me to next page</button>
+        {/* <button onClick="">take me to next page</button> */}
       </div>
     )
   }
