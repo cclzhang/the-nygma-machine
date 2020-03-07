@@ -43,11 +43,11 @@ class LandingPage extends Component {
       const randomIndex = Math.floor(Math.random() * questionStringArray.length);
       const badWords = [
         // common
-        "the", "to", "and", "then",
+        "the", "to", "and", "then", "this", "of", "is", "if", "it", "so", "a", "is", "maybe", "on", "for",
         // pronouns
-        "i", "i'm", "me", "you", "them", "they",
+        "i", "i'm", "me", "you", "them", "they", "we", "it",
         // grammar (revist this)
-        "!", , "'", "\"",
+        "!", "'", "\"",
       ]
       
       const keyWord = questionStringArray[randomIndex];
