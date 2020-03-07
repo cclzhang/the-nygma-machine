@@ -11,7 +11,8 @@ const ResultsPage = (props) => {
             will need to figure out what the Nygma Machine looks  */}
             
           <div className="quoteContainer">
-            { <p class="quote">{props.quote}</p> }
+            <p className="resultsName">{`${props.userName},`}</p>
+            <p className="resultsQuote">{props.quote}</p> 
           </div>
           
           <button type="button">Play Again?</button>

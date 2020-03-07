@@ -27,10 +27,15 @@ class LandingPage extends Component {
       userQuestion: questionArray,
     })
   }
+
+  clickHandler = (e) => {
+    this.props.storeUserQuestion(e, this.state.userQuestion);
+    this.props.storeUserName(e, this.state.userName);
+  }
+
   
   render() {
     return (
-      <Fragment>
         <main className="wrapper">
           <header>
             <h1>Welcome to the Nygma Machine</h1>
@@ -45,12 +50,9 @@ class LandingPage extends Component {
             <label htmlFor="">Ask your question</label>
             <input type="text" placeholder="Does the Joker think I'm cute?" id="userQuestion" onChange={this.handleQuestionChange}/>
             <button type="submit"
-            onClick={(e) => this.props.storeUserQuestion(e, this.state.userQuestion)}>Submit</button>
+            onClick={this.clickHandler}>Submit</button>
           </form>
         </main>
-
-        <ResultsPage quote={this.state.quote}/>
-      </Fragment>
     )
   }
 }
