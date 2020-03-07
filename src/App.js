@@ -15,7 +15,15 @@ class App extends Component {
       isMazeShown: false,
       isResultsShown: false,
       quote: '',
+      name: '',
     }
+  }
+
+  storeUserName = (e, userNameInput) => {
+    e.preventDefault();
+    this.setState({
+      name: userNameInput,
+    })
   }
 
   storeUserQuestion = (e, question) => {
@@ -62,14 +70,18 @@ class App extends Component {
           url: 'https://api.adviceslip.com/advice',
         }).then((response) => {
           this.setState({
-            quote: response.data.slip.advice
+            quote: response.data.slip.advice,
+            isLandingShown: !this.state.isLandingShown,
+            isMazeShown: !this.state.isMazeShown,
           });
         })
 
       } else {
         const randomIndex = Math.floor(Math.random() * response.data.slips.length);
         this.setState({
-          quote: response.data.slips[randomIndex].advice
+          quote: response.data.slips[randomIndex].advice,
+          isLandingShown: !this.state.isLandingShown,
+          isMazeShown: !this.state.isMazeShown,
         });
       }
     });
@@ -81,9 +93,9 @@ class App extends Component {
     return (
       <div className="App">
         {/* {this.state.isLandingShown && this.state.isMazeShown === false && this.state.isResultsShown === false ? <LandingPage /> : null } */}
-        {this.state.isLandingShown ? <LandingPage storeUserQuestion={this.storeUserQuestion} />
+        {this.state.isLandingShown ? <LandingPage storeUserQuestion={this.storeUserQuestion} storeUserName={this.storeUserName} />
         : this.state.isMazeShown ? <Maze />
-        : this.state.isResultsShown ? <ResultsPage />
+        : this.state.isResultsShown ? <ResultsPage quote={this.state.quote} userName={this.state.name} />
         : null }
       </div>
     );
