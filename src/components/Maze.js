@@ -50,6 +50,8 @@ class Maze extends Component {
       })
     })
   }
+
+  
   
   render(){
     return(
