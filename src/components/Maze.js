@@ -162,6 +162,10 @@ class Maze extends Component {
   }
 
 
+  // received a warning for a potential memory leak due to state changing on an unmounted component
+  // it looks like this was happening because of where we have the location of setState in our movePlayer and swipeHandler methods.  
+  // After the game is won (once the right key is pressed and we are at the end point), the code will continue to run and we call setState at the end of the method but at this point the component has un-mounted, which results in the warning.  Found this article which helped with the solution:  https://www.robinwieruch.de/react-warning-cant-call-setstate-on-an-unmounted-component
+  // added a property when the component mounts to track if the component is mounted, and when it unmounts we change the value to false --> then we wrapped the setState call in a conditional to only run if this.componentMounted = true.
   componentDidMount(){
     this.componentMounted = true;
 
