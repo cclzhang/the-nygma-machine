@@ -28,10 +28,10 @@ class LandingPage extends Component {
   }
 
   clickHandler = (e) => {
-    if (this.state.userName == '') {
+    if (this.state.userName === '') {
       alert('Please enter your name.');
       return false;
-    } else if (this.state.userQuestion == '') {
+    } else if (this.state.userQuestion === '') {
       alert('Please enter a question.');
       return false;
     } else {
