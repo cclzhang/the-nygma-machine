@@ -15,8 +15,8 @@ const ResultsPage = (props) => {
             <p className="resultsQuote">{props.quote}</p> 
           </div>
           
-          <button type="button">Play Again?</button>
-          <button type="button">Leaderboard</button>
+          <button onClick={props.updatePage}>Play Again?</button>
+          <button>Leaderboard</button>
         </div>
       </div>
     </Fragment>
