@@ -31,7 +31,7 @@ class LandingPage extends Component {
     if (this.state.userName === '') {
       alert('Please enter your name.');
       return false;
-    } else if (this.state.userQuestion === '') {
+    } else if (this.state.userQuestion.length === 0) {
       alert('Please enter a question.');
       return false;
     } else {
