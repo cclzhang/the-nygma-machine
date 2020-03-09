@@ -1,6 +1,5 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import '../styles/LandingPage.css'
-import ResultsPage from './ResultsPage';
 
 class LandingPage extends Component {
   constructor(){
