@@ -115,9 +115,11 @@ class Maze extends Component {
     }
 
     // run setState to cause re-render with updated maze info
-    this.setState({
-      maze: copyOfMaze,
-    })
+    if (this.componentMounted) {
+      this.setState({
+        maze: copyOfMaze,
+      })
+    }
   }
 
 
@@ -161,6 +163,8 @@ class Maze extends Component {
 
 
   componentDidMount(){
+    this.componentMounted = true;
+
     this.updateMaze();
 
     // event listener on keydown
@@ -177,6 +181,12 @@ class Maze extends Component {
       this.swipeHandler();
     }, false);
   }
+
+
+  componentWillUnmount() {
+    this.componentMounted = false;
+  }
+
 
   swipeHandler = ()=>{
     const vertical = this.state.touchstartY - this.state.touchendY;
@@ -244,9 +254,12 @@ class Maze extends Component {
         }
       }
     }
-    this.setState({
-      maze: copyOfMaze,
-    })
+    
+    if (this.componentMounted) {
+      this.setState({
+        maze: copyOfMaze,
+      })
+    }
   }
   
   render(){
