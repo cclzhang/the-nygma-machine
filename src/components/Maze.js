@@ -29,10 +29,6 @@ class Maze extends Component {
   movePlayer = (event) => {
     event.preventDefault();
     const keyPressed = event.keyCode;
-    const down = 40;
-    const up = 38;
-    const left = 37;
-    const right = 39;
     const copyOfMaze = [...this.state.maze];
 
 
@@ -40,7 +36,7 @@ class Maze extends Component {
     // go through copyOfMaze array to find current position of player
     // if the next element to the right of the current player position in the array is a "0" which is a path then okay to move the player
     // break is used to stop looping - if loop continued then the player position (which is -1) will keep on getting updated as the loop continues
-    if (keyPressed === right) {
+    if (keyPressed === 39 || keyPressed === 68) {
       for (let y = 0; y < copyOfMaze.length; y++) {
         for (let x = 0; x < copyOfMaze[y].length; x++) {
           if (copyOfMaze[y][x] === -1 && copyOfMaze[y][x + 1] === 0) {
@@ -51,7 +47,7 @@ class Maze extends Component {
 
           // alert when the user has reached the end point (goal) of the maze
           if (copyOfMaze[y][x] === -1 && copyOfMaze[y][x + 1] === 9) {
-            alert('Congrats! You Win!');
+            this.props.updatePage();
           }
         }
       }
@@ -59,7 +55,7 @@ class Maze extends Component {
 
 
     // execute code if keypressed is the left button
-    if (keyPressed === left) {
+    if (keyPressed === 37 || keyPressed === 65) {
       for (let y = 0; y < copyOfMaze.length; y++) {
         for (let x = 0; x < copyOfMaze[y].length; x++) {
           if (copyOfMaze[y][x] === -1 && copyOfMaze[y][x - 1] === 0) {
@@ -73,7 +69,7 @@ class Maze extends Component {
 
 
     // execute code if keypressed is the up button
-    if (keyPressed === up) {
+    if (keyPressed === 38 || keyPressed === 87) {
       for (let y = 0; y < copyOfMaze.length; y++) {
         for (let x = 0; x < copyOfMaze[y].length; x++) {
           if (copyOfMaze[y][x] === -1 && copyOfMaze[y - 1][x] === 0) {
@@ -87,7 +83,7 @@ class Maze extends Component {
 
 
     // execute code if keypressed is the down button
-    if (keyPressed === down) {
+    if (keyPressed === 40 || keyPressed === 83) {
       let didPlayerMove = false;
 
       for (let y = 0; y < copyOfMaze.length; y++) {
@@ -157,6 +153,10 @@ class Maze extends Component {
 
     // event listener on keydown
     document.addEventListener("keydown", this.movePlayer);
+  }
+
+  componentWillUnmount(){
+    document.removeEventListener("keydown", this.movePlayer);
   }
   
   render(){

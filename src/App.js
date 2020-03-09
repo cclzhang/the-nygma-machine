@@ -19,6 +19,20 @@ class App extends Component {
     }
   }
 
+  updateResult = () => {
+    this.setState({
+      isMazeShown: false,
+      isResultsShown: true,
+    });
+  }
+
+  replay = () => {
+    this.setState({
+      isResultsShown: !this.state.isResultsShown,
+      isLandingShown: !this.state.isLandingShown,
+    });
+  }
+
   storeUserName = (e, userNameInput) => {
     e.preventDefault();
     this.setState({
@@ -94,8 +108,8 @@ class App extends Component {
       <div className="App">
         {/* {this.state.isLandingShown && this.state.isMazeShown === false && this.state.isResultsShown === false ? <LandingPage /> : null } */}
         {this.state.isLandingShown ? <LandingPage storeUserQuestion={this.storeUserQuestion} storeUserName={this.storeUserName} />
-        : this.state.isMazeShown ? <Maze />
-        : this.state.isResultsShown ? <ResultsPage quote={this.state.quote} userName={this.state.name} />
+        : this.state.isMazeShown ? <Maze updatePage={this.updateResult}/>
+        : this.state.isResultsShown ? <ResultsPage quote={this.state.quote} userName={this.state.name} updatePage={this.replay}/>
         : null }
       </div>
     );
