@@ -175,13 +175,17 @@ class Maze extends Component {
     document.addEventListener("keydown", this.movePlayer);
 
     document.addEventListener('touchstart', (e)=> {
-      this.state.touchstartX = e.changedTouches[0].screenX;
-      this.state.touchstartY = e.changedTouches[0].screenY;
+      this.setState({
+        touchstartX: e.changedTouches[0].screenX,
+        touchstartY: e.changedTouches[0].screenY,
+      })
     }, false);
 
     document.addEventListener('touchend', (e)=> {
-      this.state.touchendX = e.changedTouches[0].screenX;
-      this.state.touchendY = e.changedTouches[0].screenY;
+      this.setState({
+        touchendX: e.changedTouches[0].screenX,
+        touchendY: e.changedTouches[0].screenY,
+      })
       this.swipeHandler();
     }, false);
   }
