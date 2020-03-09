@@ -28,8 +28,16 @@ class LandingPage extends Component {
   }
 
   clickHandler = (e) => {
-    this.props.storeUserQuestion(e, this.state.userQuestion);
-    this.props.storeUserName(e, this.state.userName);
+    if (this.state.userName == '') {
+      alert('Please enter your name.');
+      return false;
+    } else if (this.state.userQuestion == '') {
+      alert('Please enter a question.');
+      return false;
+    } else {
+      this.props.storeUserQuestion(e, this.state.userQuestion);
+      this.props.storeUserName(e, this.state.userName);
+    };
   }
 
   
