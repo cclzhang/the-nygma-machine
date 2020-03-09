@@ -35,7 +35,7 @@ class LandingPage extends Component {
   
   render() {
     return (
-        <main className="wrapper">
+      <main className="wrapper">
           <header>
             <h1>Welcome to the Nygma Machine</h1>
             <h2>Ask your question for some advice</h2>
