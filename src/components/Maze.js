@@ -35,8 +35,6 @@ class Maze extends Component {
     const keyPressed = event.keyCode;
     const copyOfMaze = [...this.state.maze];
 
-
-
     // execute code if keypressed is the right button
     // go through copyOfMaze array to find current position of player
     // if the next element to the right of the current player position in the array is a "0" which is a path then okay to move the player
@@ -44,7 +42,7 @@ class Maze extends Component {
 
     // execute code if keypressed is the right button
       
-      if (keyPressed === 39 || keyPressed === 68) {
+    if (keyPressed === 39 || keyPressed === 68) {
         for (let y = 0; y < copyOfMaze.length; y++) {
           for (let x = 0; x < copyOfMaze[y].length; x++) {
             if (copyOfMaze[y][x] === -1 && copyOfMaze[y][x + 1] === 0) {
