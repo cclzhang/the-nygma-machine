@@ -58,7 +58,7 @@ class LandingPage extends Component {
           <h1 className="headTitle">Welcome to the Nygma Machine</h1>
           <h2 className="headInstructions">Ask your question for some advice</h2>
           <div className="headImageContainer">
-            <img src="" alt="" className="headImage"/>
+            <img src="../assets/riddlerSprite.png" alt="the Riddler" className="headImage"/>
           </div>
         </header>
 

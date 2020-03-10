@@ -15,7 +15,6 @@ body {
   font-size: 1.6rem; 
   font-family: 'Poiret One', cursive;
   font-family: 'Hind Siliguri', sans-serif;
-  background-color: #298776;
 }
 
 * {
@@ -64,8 +63,20 @@ button {
   margin: 0 auto;
 }
 
-.App {
-  background-color: #c9c9c9;
-  height: 80vh;
+
+
+.gameShell {
+  background-color: #298776;
+  height: 100vh;
 }
 
+.App {
+  background-color: #c9c9c9;
+  height: 80%;
+  border: 10px grey solid;
+}
+
+.controller {
+  background-color: #50C17F;
+  height: 20%;
+}
