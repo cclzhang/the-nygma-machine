@@ -7,7 +7,8 @@ class LandingPage extends Component {
     
     this.state = {
       userName: '',
-      userQuestion: [],
+      userQuestion: '',
+      userQuestionArray: [],
     }
   }
 
@@ -23,7 +24,8 @@ class LandingPage extends Component {
     const questionArray = questionString.trim().split(' ');
     
     this.setState({
-      userQuestion: questionArray,
+      userQuestion: questionString,
+      userQuestionArray: questionArray,
     })
   }
 
@@ -37,27 +39,49 @@ class LandingPage extends Component {
     } else {
       this.props.storeUserQuestion(e, this.state.userQuestion);
       this.props.storeUserName(e, this.state.userName);
+
+      // reset values back to blank after form submitted
+      // after submission there is nothing in the inputs and because we have binded our inputs (using value attribute) // we want to make sure everything is in sync
+      this.setState({
+        userName: '',
+        userQuestion: '',
+        userQuestionArray: [],
+      })
     };
   }
 
   
   render() {
     return (
-      <main className="wrapper">
-          <header>
-            <h1>Welcome to the Nygma Machine</h1>
-            <h2>Ask your question for some advice</h2>
-            <div className="imageContainer">
-              <img src="" alt=""/>
+      <main>
+          <header className="head">
+            <h1 className="headTitle">Welcome to the Nygma Machine</h1>
+            <h2 className="headInstructions">Ask your question for some advice</h2>
+            <div className="headImageContainer">
+              <img src="" alt="" className="headImage"/>
             </div>
           </header>
-          <form action="">
-            <label htmlFor="">What's your name?</label>
-            <input type="text" placeholder="Batman" id="userName" onChange={this.handleNameChange} />
-            <label htmlFor="">Ask your question</label>
-            <input type="text" placeholder="Does the Joker think I'm cute?" id="userQuestion" onChange={this.handleQuestionChange}/>
-            <button type="submit"
-            onClick={this.clickHandler}>Submit</button>
+
+          <form action="" className="form">
+            <label htmlFor="userName" className="formLabel">What's your name?</label>
+            <input 
+              type="text" 
+              placeholder="Batman" 
+              id="userName" 
+              onChange={this.handleNameChange} 
+              value={this.state.userName}
+              className="formInput"
+            />
+            <label htmlFor="userQuestion" className="formLabel" >Ask your question</label>
+            <input 
+              type="text" 
+              placeholder="Does the Joker think I'm cute?" 
+              id="userQuestion" 
+              onChange={this.handleQuestionChange}
+              value={this.state.userQuestion}
+              className="formInput"
+            />
+            <button type="submit" onClick={this.clickHandler} className="formButton">Submit</button>
           </form>
         </main>
     )

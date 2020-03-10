@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './styles/App.css';
 import axios from 'axios';
+import firebase from './data/firebase';
 import LandingPage from './components/LandingPage';
 import Maze from './components/Maze'
 import ResultsPage from './components/ResultsPage';
@@ -20,6 +21,13 @@ class App extends Component {
   }
 
   updateResult = () => {
+    const dbRef = firebase.database().ref();
+    const userDeets = {
+      name: this.state.name,
+      quote: this.state.quote,
+    }
+    dbRef.push(userDeets); 
+
     this.setState({
       isMazeShown: false,
       isResultsShown: true,
@@ -108,7 +116,7 @@ class App extends Component {
   
   render(){
     return (
-      <div className="App">
+      <div className="App wrapper">
         {/* {this.state.isLandingShown && this.state.isMazeShown === false && this.state.isResultsShown === false ? <LandingPage /> : null } */}
         {this.state.isLandingShown ? <LandingPage storeUserQuestion={this.storeUserQuestion} storeUserName={this.storeUserName} />
         : this.state.isMazeShown ? <Maze updatePage={this.updateResult}/>
