@@ -1,24 +1,30 @@
-*{
+
+
+/* primary colour: #298776 */
+/* secondary colour: #50C17F */
+/* accent colour: #1D3548 */
+
+
+html {
+  /* 16px * 62.5% = 10px */
+  font-size: 62.5%; 
+}
+
+body {
+  /* 10px * 1.6rem = 16px */
+  font-size: 1.6rem; 
+}
+
+* {
   margin: 0;
   padding: 0;
 }
 
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-size: 2rem;
-}
-
-.wrapper {
-  max-width: 800px;
-  width: 60%;
-  margin: 0 auto;
-}
 
 img {
+  /* height:auto will ensure the image's dimensions are consistent throughout its parent's varying width */
   width: 100%;
+  height: auto;
   display: block;
   object-fit: cover;
 }
@@ -48,3 +54,10 @@ button {
 button {
   cursor: pointer;
 }
+
+.wrapper {
+  max-width: 800px;
+  width: 60%;
+  margin: 0 auto;
+}
+
