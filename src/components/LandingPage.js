@@ -62,33 +62,26 @@ class LandingPage extends Component {
             </div>
           </header>
 
-
           <form action="" className="form">
-            <label htmlFor="" className="formLabel">What's your name?</label>
-            <input type="text" placeholder="Batman" id="userName" onChange={this.handleNameChange} className="formInput"/>
-            <label htmlFor="" className="formLabel">Ask your question</label>
-            <input type="text" placeholder="Does the Joker think I'm cute?" id="userQuestion" onChange={this.handleQuestionChange} className="formInput"/>
-            <button type="submit" onClick={this.clickHandler} className="formButton">Submit</button>
-
-          <form action="">
-            <label htmlFor="userName">What's your name?</label>
+            <label htmlFor="userName" className="formLabel">What's your name?</label>
             <input 
               type="text" 
               placeholder="Batman" 
               id="userName" 
               onChange={this.handleNameChange} 
               value={this.state.userName}
+              className="formInput"
             />
-            <label htmlFor="userQuestion">Ask your question</label>
+            <label htmlFor="userQuestion" className="formLabel" >Ask your question</label>
             <input 
               type="text" 
               placeholder="Does the Joker think I'm cute?" 
               id="userQuestion" 
               onChange={this.handleQuestionChange}
               value={this.state.userQuestion}
+              className="formInput"
             />
-            <button type="submit"
-            onClick={this.clickHandler}>Submit</button>
+            <button type="submit" onClick={this.clickHandler} className="formButton">Submit</button>
           </form>
         </main>
     )
