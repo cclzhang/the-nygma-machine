@@ -108,7 +108,7 @@ class App extends Component {
   
   render(){
     return (
-      <div className="App">
+      <div className="App wrapper">
         {/* {this.state.isLandingShown && this.state.isMazeShown === false && this.state.isResultsShown === false ? <LandingPage /> : null } */}
         {this.state.isLandingShown ? <LandingPage storeUserQuestion={this.storeUserQuestion} storeUserName={this.storeUserName} />
         : this.state.isMazeShown ? <Maze updatePage={this.updateResult}/>

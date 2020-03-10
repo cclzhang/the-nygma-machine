@@ -270,9 +270,10 @@ class Maze extends Component {
   
   render(){
     return(
-      <div className="maze">
-        <h3>maze is here</h3>
-        <canvas ref="canvas" width="600px" height="600px"></canvas>
+      <div className="mazeContainer">
+        <h3 className="mazeTitle">maze is here</h3>
+        {/* maze is styled within maze.js file, not in maze.css */}
+        <canvas ref="canvas" width="600px" height="600px" className="maze"></canvas>
       </div>
     )
   }

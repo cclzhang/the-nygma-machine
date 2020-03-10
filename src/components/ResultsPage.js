@@ -5,19 +5,18 @@ import '../styles/ResultsPage.css'
 const ResultsPage = (props) => {
   return (
     <Fragment>
-      <div className="wrapper">
-        <div className="nygmaContainer">
-          {/* image here :) - image of Nygma Machine
-            will need to figure out what the Nygma Machine looks  */}
-            
-          <div className="quoteContainer">
-            <p className="resultsName">{`${props.userName},`}</p>
-            <p className="resultsQuote">{props.quote}</p> 
-          </div>
-          
-          <button onClick={props.updatePage}>Play Again?</button>
-          <button>Leaderboard</button>
+      <div className="resultContainer">
+        <div className="resultContent">
+          <img src="" alt="" className="resultSprite" />
+          <p className="resultUserName">{`${props.userName},`}</p>
+          <p className="resultAdvice">{props.quote}</p> 
         </div>
+          
+        <form className="form">
+          <button onClick={props.updatePage} className="formButton">Play Again?</button>
+          <button className="formButton">Leaderboard</button>
+        </form>          
+
       </div>
     </Fragment>
   )
