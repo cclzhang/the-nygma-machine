@@ -9,6 +9,7 @@ class ResultsPage extends Component {
     super();
     this.state = {
       userCompleted: [],
+      isLeaderboardShown: false,
     }
   }
   
@@ -25,6 +26,14 @@ class ResultsPage extends Component {
       })
     })
   }
+
+  toggleLeaderboard = (e)=>{
+    e.preventDefault();
+    this.setState({
+      isLeaderboardShown: !this.state.isLeaderboardShown,
+    })
+  }
+
   render(){
     return (
         <div className="resultContainer">
@@ -32,21 +41,14 @@ class ResultsPage extends Component {
             <img src="" alt="" className="resultSprite" />
             <p className="resultUserName">{`${this.props.userName},`}</p>
             <p className="resultAdvice">{this.props.quote}</p> 
-            <ul>
-              {this.state.userCompleted.map((name, index)=>{
-                return(
-                  <li key={index}>{name}</li>
-                )
-              })}
-            </ul>
           </div>
 
-          // add prevent default action for form           
+          {/* add prevent default action for form*/}
           <form className="form">
             <button onClick={this.props.updatePage} className="formButton">Play Again?</button>
-            <button className="formButton">Leaderboard</button>
+            <button onClick={this.toggleLeaderboard} className="formButton">Leaderboard</button>
           </form>          
-
+          {this.state.isLeaderboardShown ? <Leaderboard content={this.state.userCompleted}/> : null}
         </div>
     )
   }

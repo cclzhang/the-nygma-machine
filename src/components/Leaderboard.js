@@ -1,11 +1,15 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class Leaderboard extends Component {
-  render(){
+const Leaderboard = (props) => {
     return (
-      <h1>hi</h1>
+      <ul>
+        {props.content.map((name, index) => {
+          return (
+            <li key={index}>{name}</li>
+          )
+        })}
+      </ul>
     )
-  }
 }
 
 export default Leaderboard;
