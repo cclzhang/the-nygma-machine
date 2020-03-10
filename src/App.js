@@ -116,12 +116,19 @@ class App extends Component {
   
   render(){
     return (
-      <div className="App wrapper">
-        {/* {this.state.isLandingShown && this.state.isMazeShown === false && this.state.isResultsShown === false ? <LandingPage /> : null } */}
-        {this.state.isLandingShown ? <LandingPage storeUserQuestion={this.storeUserQuestion} storeUserName={this.storeUserName} />
-        : this.state.isMazeShown ? <Maze updatePage={this.updateResult}/>
-        : this.state.isResultsShown ? <ResultsPage quote={this.state.quote} userName={this.state.name} updatePage={this.replay}/>
-        : null }
+      <div className="gameShell">
+        <div className="App wrapper">
+          {/* {this.state.isLandingShown && this.state.isMazeShown === false && this.state.isResultsShown === false ? <LandingPage /> : null } */}
+          {this.state.isLandingShown ? <LandingPage storeUserQuestion={this.storeUserQuestion} storeUserName={this.storeUserName} />
+          : this.state.isMazeShown ? <Maze updatePage={this.updateResult}/>
+          : this.state.isResultsShown ? <ResultsPage quote={this.state.quote} userName={this.state.name} updatePage={this.replay}/>
+          : null }
+        </div>
+
+        <div className="controller">
+          <div className="fakeButton"></div>
+          <div className="fakeButton"></div>
+        </div>
       </div>
     );
   }

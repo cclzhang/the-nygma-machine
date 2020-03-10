@@ -54,36 +54,36 @@ class LandingPage extends Component {
   render() {
     return (
       <main>
-          <header className="head">
-            <h1 className="headTitle">Welcome to the Nygma Machine</h1>
-            <h2 className="headInstructions">Ask your question for some advice</h2>
-            <div className="headImageContainer">
-              <img src="" alt="" className="headImage"/>
-            </div>
-          </header>
+        <header className="head">
+          <h1 className="headTitle">Welcome to the Nygma Machine</h1>
+          <h2 className="headInstructions">Ask your question for some advice</h2>
+          <div className="headImageContainer">
+            <img src="" alt="" className="headImage"/>
+          </div>
+        </header>
 
-          <form action="" className="form">
-            <label htmlFor="userName" className="formLabel">What's your name?</label>
-            <input 
-              type="text" 
-              placeholder="Batman" 
-              id="userName" 
-              onChange={this.handleNameChange} 
-              value={this.state.userName}
-              className="formInput"
-            />
-            <label htmlFor="userQuestion" className="formLabel" >Ask your question</label>
-            <input 
-              type="text" 
-              placeholder="Does the Joker think I'm cute?" 
-              id="userQuestion" 
-              onChange={this.handleQuestionChange}
-              value={this.state.userQuestion}
-              className="formInput"
-            />
-            <button type="submit" onClick={this.clickHandler} className="formButton">Submit</button>
-          </form>
-        </main>
+        <form action="" className="initialForm">
+          <label htmlFor="userName" className="formLabel">What's your name?</label>
+          <input 
+            type="text" 
+            placeholder="Batman" 
+            id="userName" 
+            onChange={this.handleNameChange} 
+            value={this.state.userName}
+            className="formInput"
+          />
+          <label htmlFor="userQuestion" className="formLabel" >Ask your question</label>
+          <input 
+            type="text" 
+            placeholder="Does the Joker think I'm cute?" 
+            id="userQuestion" 
+            onChange={this.handleQuestionChange}
+            value={this.state.userQuestion}
+            className="formInput"
+          />
+          <button type="submit" onClick={this.clickHandler} className="formButton">Submit</button>
+        </form>
+      </main>      
     )
   }
 }
