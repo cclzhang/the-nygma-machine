@@ -4,7 +4,6 @@ import Leaderboard from './Leaderboard';
 import '../styles/ResultsPage.css';
 
 
-// stateless component
 class ResultsPage extends Component {
   constructor(){
     super();
@@ -28,29 +27,30 @@ class ResultsPage extends Component {
   }
   render(){
     return (
-        <div className="wrapper">
-          <div className="nygmaContainer">
-            {/* image here :) - image of Nygma Machine
-              will need to figure out what the Nygma Machine looks  */}
-              
-            <div className="quoteContainer">
-              <p className="resultsName">{`${this.props.userName},`}</p>
-              <p className="resultsQuote">{this.props.quote}</p> 
-              <ul>
-                {this.state.userCompleted.map((name, index)=>{
-                  return(
-                    <li key={index}>{name}</li>
-                  )
-                })}
-              </ul>
-            </div>
-            
-            <button onClick={this.props.updatePage}>Play Again?</button>
-            <button>Leaderboard</button>
+        <div className="resultContainer">
+          <div className="resultContent">
+            <img src="" alt="" className="resultSprite" />
+            <p className="resultUserName">{`${this.props.userName},`}</p>
+            <p className="resultAdvice">{this.props.quote}</p> 
+            <ul>
+              {this.state.userCompleted.map((name, index)=>{
+                return(
+                  <li key={index}>{name}</li>
+                )
+              })}
+            </ul>
           </div>
+
+          // add prevent default action for form           
+          <form className="form">
+            <button onClick={this.props.updatePage} className="formButton">Play Again?</button>
+            <button className="formButton">Leaderboard</button>
+          </form>          
+
         </div>
     )
   }
+
 }
 
 export default ResultsPage;
