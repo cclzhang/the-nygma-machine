@@ -13,6 +13,9 @@ html {
 body {
   /* 10px * 1.6rem = 16px */
   font-size: 1.6rem; 
+  font-family: 'Poiret One', cursive;
+  font-family: 'Hind Siliguri', sans-serif;
+  background-color: #298776;
 }
 
 * {
@@ -56,8 +59,13 @@ button {
 }
 
 .wrapper {
-  max-width: 800px;
-  width: 60%;
+  max-width: 1200px;
+  width: 80%;
   margin: 0 auto;
+}
+
+.App {
+  background-color: #c9c9c9;
+  height: 80vh;
 }
 
