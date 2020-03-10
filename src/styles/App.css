@@ -22,7 +22,6 @@ body {
   padding: 0;
 }
 
-
 img {
   /* height:auto will ensure the image's dimensions are consistent throughout its parent's varying width */
   width: 100%;
@@ -63,20 +62,18 @@ button {
   margin: 0 auto;
 }
 
-
-
 .gameShell {
-  background-color: #298776;
+  background-color: #000000;
   height: 100vh;
 }
 
 .App {
-  background-color: #c9c9c9;
-  height: 80%;
+  background-color: #3F3F3F;
+  height: 100%;
   border: 10px grey solid;
 }
 
-.controller {
-  background-color: #50C17F;
+/* .controller {
+  background-color: #3F3F3F;
   height: 20%;
-}
+} */
