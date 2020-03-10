@@ -30,18 +30,16 @@ class Maze extends Component {
     }
   }
 
-  movePlayer = (event) => {
-    event.preventDefault();
-    const keyPressed = event.keyCode;
+  movePlayer = (e) => {
+    e.preventDefault();
+    const keyPressed = e.keyCode;
     const copyOfMaze = [...this.state.maze];
 
-    // execute code if keypressed is the right button
     // go through copyOfMaze array to find current position of player
     // if the next element to the right of the current player position in the array is a "0" which is a path then okay to move the player
     // break is used to stop looping - if loop continued then the player position (which is -1) will keep on getting updated as the loop continues
 
     // execute code if keypressed is the right button
-      
     if (keyPressed === 39 || keyPressed === 68) {
         for (let y = 0; y < copyOfMaze.length; y++) {
           for (let x = 0; x < copyOfMaze[y].length; x++) {
@@ -59,10 +57,7 @@ class Maze extends Component {
             }
           }
         }
-      }
-  
-  
-  
+      }  
   
       // execute code if keypressed is the left button
       if (keyPressed === 37 || keyPressed === 65) {
@@ -77,7 +72,6 @@ class Maze extends Component {
         }
       }
 
-
     // execute code if keypressed is the up button
     if (keyPressed === 38 || keyPressed === 87) {
       for (let y = 0; y < copyOfMaze.length; y++) {
@@ -90,7 +84,6 @@ class Maze extends Component {
         }
       }
     }
-
 
     // execute code if keypressed is the down button
     if (keyPressed === 40 || keyPressed === 83) {
@@ -191,13 +184,17 @@ class Maze extends Component {
 
   componentWillUnmount() {
     this.componentMounted = false;
+
+    document.removeEventListener("keydown", this.movePlayer);
   }
 
 
-  swipeHandler = ()=>{
+  // ************** touch events to move player on touch screen ***********
+  swipeHandler = () => {
     const vertical = this.state.touchstartY - this.state.touchendY;
     const horizontal = this.state.touchendX - this.state.touchstartX;
     const copyOfMaze = [...this.state.maze];
+
     // swipe right
     if (Math.abs(horizontal) > Math.abs(vertical) && horizontal > 0) {
       for (let y = 0; y < copyOfMaze.length; y++) {
@@ -217,6 +214,7 @@ class Maze extends Component {
         }
       }
     }
+
     // swipe left
     if (Math.abs(horizontal) > Math.abs(vertical) && horizontal < 0) {
       for (let y = 0; y < copyOfMaze.length; y++) {
@@ -229,6 +227,7 @@ class Maze extends Component {
         }
       }
     }
+
     // swipe up
     if (Math.abs(horizontal) < Math.abs(vertical) && vertical > 0) {
       for (let y = 0; y < copyOfMaze.length; y++) {
@@ -241,6 +240,7 @@ class Maze extends Component {
         }
       }
     }
+
     // swipe down
     if (Math.abs(horizontal) < Math.abs(vertical) && vertical < 0) {
       let didPlayerMove = false;
@@ -268,7 +268,7 @@ class Maze extends Component {
     }
   }
   
-  render(){
+  render() {
     return(
       <div className="maze">
         <h3>maze is here</h3>
