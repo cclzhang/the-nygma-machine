@@ -4,7 +4,6 @@ import Leaderboard from './Leaderboard';
 import '../styles/ResultsPage.css';
 
 
-// stateless component
 class ResultsPage extends Component {
   constructor(){
     super();
@@ -26,6 +25,11 @@ class ResultsPage extends Component {
       })
     })
   }
+
+  displayLeaderboard = ()=>{
+
+  }
+
   render(){
     return (
         <div className="wrapper">
