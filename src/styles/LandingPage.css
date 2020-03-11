@@ -12,6 +12,11 @@ main {
   text-align: center;
   font-family: 'Poiret One', cursive;
   color: white;
+  padding-top: 10%;
+}
+
+h1 {
+  margin: 0;
 }
 
 .headTitle {
