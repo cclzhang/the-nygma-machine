@@ -1,10 +1,24 @@
 import React, {Component} from 'react';
 import '../styles/Maze.css'
 
+
+// Maze.js breakdown
+// constructor
+// canvas setup (f)
+// movePlayer (f)
+// swipe event handler (f)
+// componentDidMount
+// componentUnMount
+// componentDidUpdate
+// render
+
+
 class Maze extends Component {
   constructor(){
     super();
 
+    // maze path is set in state
+    // touchstart and touchend keys are for touch event handler
     this.state = {
       maze: [
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -31,49 +45,94 @@ class Maze extends Component {
     }
   }
 
+
+  // canvas setup
+  updateMaze = () => {
+    const canvas = this.refs.canvas;
+    const ctx = canvas.getContext('2d');
+
+    // used a forEach nbd
+    // nested forEach iterates through nested array
+    // '-1' is the player
+    // '0' is the path
+    // '1' is the wall
+    // '9' is the end point
+    // we use value parameter to iterate through all of the nested arrays
+    // we use the index parameter to indicate position in our conditional statements
+    this.state.maze.forEach((y, yIndex) => {
+      y.forEach((x, xIndex) => {
+        if (x === 1) {
+          ctx.fillStyle = "black";
+          ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);
+        }
+        else if (x === 0) {
+          ctx.fillStyle = "#235304";
+          ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);
+        }
+        else if (x === -1) {
+          ctx.fillStyle = "darkgrey";
+          ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);
+          // const img = '../assets/batmanSprite.png'
+          // ctx.drawImage(img, 40, 40);        
+        }
+        else if (x === 9) {
+          ctx.fillStyle = "#235304";
+          ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);
+        }
+      })
+    })
+  }
+
+
+  // move player function
   movePlayer = (e) => {
     e.preventDefault();
     const keyPressed = e.keyCode;
     const copyOfMaze = [...this.state.maze];
 
     // go through copyOfMaze array to find current position of player
-    // if the next element to the right of the current player position in the array is a "0" which is a path then okay to move the player
+      // '-1' is the player
+      // '0' is the path
+      // '1' is the wall
+      // '9' is the end point
     // break is used to stop looping - if loop continued then the player position (which is -1) will keep on getting updated as the loop continues
+    // next steps would be to refactor into switch case logic
 
-    // execute code if keypressed is the right button
+    // keypress is the right arrow/'d' button will move div right
     if (keyPressed === 39 || keyPressed === 68) {
-        for (let y = 0; y < copyOfMaze.length; y++) {
-          for (let x = 0; x < copyOfMaze[y].length; x++) {
-            if (copyOfMaze[y][x] === -1 && copyOfMaze[y][x + 1] === 0) {
-              copyOfMaze[y][x] = 0;
-              copyOfMaze[y][x + 1] = -1;
-              break;
-            }
-  
-            // alert when the user has reached the end point (goal) of the maze
-            if (copyOfMaze[y][x] === -1 && copyOfMaze[y][x + 1] === 9) {
-              copyOfMaze[1][0] = -1;
-              copyOfMaze[y][x] = 0;
-              this.props.updatePage();
-            }
+      for (let y = 0; y < copyOfMaze.length; y++) {
+        for (let x = 0; x < copyOfMaze[y].length; x++) {
+          if (copyOfMaze[y][x] === -1 && copyOfMaze[y][x + 1] === 0) {
+            copyOfMaze[y][x] = 0;
+            copyOfMaze[y][x + 1] = -1;
+            break;
           }
-        }
-      }  
-  
-      // execute code if keypressed is the left button
-      if (keyPressed === 37 || keyPressed === 65) {
-        for (let y = 0; y < copyOfMaze.length; y++) {
-          for (let x = 0; x < copyOfMaze[y].length; x++) {
-            if (copyOfMaze[y][x] === -1 && copyOfMaze[y][x - 1] === 0) {
-              copyOfMaze[y][x] = 0;
-              copyOfMaze[y][x - 1] = -1;
-              break;
-            }
+
+          // alert when the user has reached the end point (goal) of the maze
+          // this would be added to all keypress events if we decided to put end of maze in locations other than the right side
+          if (copyOfMaze[y][x] === -1 && copyOfMaze[y][x + 1] === 9) {
+            copyOfMaze[1][0] = -1;
+            copyOfMaze[y][x] = 0;
+            this.props.updatePage();
           }
         }
       }
+    }  
+  
+    // keypress is the left arrow/'a' button will move div left
+    if (keyPressed === 37 || keyPressed === 65) {
+      for (let y = 0; y < copyOfMaze.length; y++) {
+        for (let x = 0; x < copyOfMaze[y].length; x++) {
+          if (copyOfMaze[y][x] === -1 && copyOfMaze[y][x - 1] === 0) {
+            copyOfMaze[y][x] = 0;
+            copyOfMaze[y][x - 1] = -1;
+            break;
+          }
+        }
+      }
+    }
 
-    // execute code if keypressed is the up button
+    // keypress is the up arrow/'w' button will move div up
     if (keyPressed === 38 || keyPressed === 87) {
       for (let y = 0; y < copyOfMaze.length; y++) {
         for (let x = 0; x < copyOfMaze[y].length; x++) {
@@ -86,7 +145,7 @@ class Maze extends Component {
       }
     }
 
-    // execute code if keypressed is the down button
+    // keypress is the down arrow/'s' button will move div down
     if (keyPressed === 40 || keyPressed === 83) {
       let didPlayerMove = false;
 
@@ -115,84 +174,8 @@ class Maze extends Component {
   }
 
 
-  updateMaze = () => {
-    const canvas = this.refs.canvas;
-    const ctx = canvas.getContext('2d');
-
-    // used a forEach nbd
-    // nested forEach iterates through nested array
-    // if array value is 0, it is a clear path for the character div
-    // if array value is 1, it is a wall that the character div cannot move through
-    // we use value parameter to iterate through all of the nested arrays
-    // we use the index parameter to indicate position in our conditional statements
-    this.state.maze.forEach((y, yIndex) => {
-      y.forEach((x, xIndex) => {
-        if (x === 1) {
-          ctx.fillStyle = "black";
-          ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);
-        }
-        else if (x === 0) {
-          ctx.fillStyle = "#235304";
-          ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);
-        } 
-        else if (x === -1) { 
-          ctx.fillStyle = "darkgrey";
-          ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);  
-          // const img = '../assets/batmanSprite.png'
-          // ctx.drawImage(img, 40, 40);        
-        }
-        else if (x === 9) {
-          ctx.fillStyle = "#235304";
-          ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);   
-        }
-      })
-    })
-  }
-
-  
-  // when there are changes in state or props run the method to update the maze canvas
-  componentDidUpdate() {
-    this.updateMaze()
-  }
-
-
-  // received a warning for a potential memory leak due to state changing on an unmounted component
-  // it looks like this was happening because of where we have the location of setState in our movePlayer and swipeHandler methods.  
-  // After the game is won (once the right key is pressed and we are at the end point), the code will continue to run and we call setState at the end of the method but at this point the component has un-mounted, which results in the warning.  Found this article which helped with the solution:  https://www.robinwieruch.de/react-warning-cant-call-setstate-on-an-unmounted-component
-  // added a property when the component mounts to track if the component is mounted, and when it unmounts we change the value to false --> then we wrapped the setState call in a conditional to only run if this.componentMounted = true.
-  componentDidMount(){
-    this.componentMounted = true;
-
-    this.updateMaze();
-
-    // event listener on keydown
-    document.addEventListener("keydown", this.movePlayer);
-
-    document.addEventListener('touchstart', (e)=> {
-      this.setState({
-        touchstartX: e.changedTouches[0].screenX,
-        touchstartY: e.changedTouches[0].screenY,
-      })
-    }, false);
-
-    document.addEventListener('touchend', (e)=> {
-      this.setState({
-        touchendX: e.changedTouches[0].screenX,
-        touchendY: e.changedTouches[0].screenY,
-      })
-      this.swipeHandler();
-    }, false);
-  }
-
-
-  componentWillUnmount() {
-    this.componentMounted = false;
-
-    document.removeEventListener("keydown", this.movePlayer);
-  }
-
-
-  // ************** touch events to move player on touch screen ***********
+  // touch event handler
+  // will move player in maze on mobile
   swipeHandler = () => {
     const vertical = this.state.touchstartY - this.state.touchendY;
     const horizontal = this.state.touchendX - this.state.touchstartX;
@@ -263,14 +246,58 @@ class Maze extends Component {
         }
       }
     }
-    
+
+    // run setState to cause re-render with updated maze info
     if (this.componentMounted) {
       this.setState({
         maze: copyOfMaze,
       })
     }
   }
+
+
+  // received a warning for a potential memory leak due to state changing on an unmounted component
+  // it looks like this was happening because of where we have the location of setState in our movePlayer and swipeHandler methods.  
+  // After the game is won (once the right key is pressed and we are at the end point), the code will continue to run and we call setState at the end of the method but at this point the component has un-mounted, which results in the warning.  Found this article which helped with the solution:  https://www.robinwieruch.de/react-warning-cant-call-setstate-on-an-unmounted-component
+  // added a property when the component mounts to track if the component is mounted, and when it unmounts we change the value to false --> then we wrapped the setState call in a conditional to only run if this.componentMounted = true.
+  componentDidMount(){
+    this.componentMounted = true;
+
+    this.updateMaze();
+
+    // event listener on keydown
+    document.addEventListener("keydown", this.movePlayer);
+
+    document.addEventListener('touchstart', (e)=> {
+      this.setState({
+        touchstartX: e.changedTouches[0].screenX,
+        touchstartY: e.changedTouches[0].screenY,
+      })
+    }, false);
+
+    document.addEventListener('touchend', (e)=> {
+      this.setState({
+        touchendX: e.changedTouches[0].screenX,
+        touchendY: e.changedTouches[0].screenY,
+      })
+      this.swipeHandler();
+    }, false);
+  }
+
+
+  componentWillUnmount() {
+    this.componentMounted = false;
+
+    document.removeEventListener("keydown", this.movePlayer);
+  }
+
+
+  // when there are changes in state or props run the method to update the maze canvas
+  componentDidUpdate() {
+    this.updateMaze()
+  }
   
+
   render() {
     return(
       <div className="mazeContainer">
