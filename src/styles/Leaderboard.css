@@ -1,0 +1,32 @@
+/* GoogleFonts import */
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Poiret+One&display=swap");
+
+.leaderboardHeader {
+  font-family: 'Poiret One', cursive;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.leaderboardContainer {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 65%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 30px;
+}
+
+.leaderboardContainer button {
+  position: absolute;
+  left: 90%;
+  top: 5px;
+  color: rgb(255, 255, 255);
+}
+
+.leaderboardContainer li {
+  font-size: 1.7rem;
+  margin-bottom: 5px;
+}

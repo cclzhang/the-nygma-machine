@@ -48,7 +48,7 @@ class ResultsPage extends Component {
             <button onClick={this.props.updatePage} className="formButton">Play Again?</button>
             <button onClick={this.toggleLeaderboard} className="formButton">Leaderboard</button>
           </form>          
-          {this.state.isLeaderboardShown ? <Leaderboard content={this.state.userCompleted}/> : null}
+          {this.state.isLeaderboardShown ? <Leaderboard toggleLeaderboard={this.toggleLeaderboard} content={this.state.userCompleted}/> : null}
         </div>
     )
   }
