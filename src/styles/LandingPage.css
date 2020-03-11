@@ -20,7 +20,7 @@
   width: 20%;
   max-width: 150px;
   animation: 800ms ease-out infinite loadermation;
-  border-bottom: #50C17F;
+  /* border-bottom: #50C17F; */
 }
 
 @keyframes loadermation{
