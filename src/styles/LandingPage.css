@@ -4,8 +4,47 @@ main {
   /* I set an explicit height since the app will fit within the viewheight */
   display: flex;
   flex-direction: column;
-  flex-flow: nowrap;
   justify-content: space-between;
-  
+  align-items: center;
 }
+
+.head {
+  text-align: center;
+  font-family: 'Poiret One', cursive;
+  color: white;
+}
+
+.headTitle {
+  font-size: 5.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.headImageContainer {
+  width: 20%;
+  margin: 0 auto;
+}
+
+.initialForm {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  background-color: white;
+  width: 400px;
+  height: 30px; 
+  margin: 5px auto;
+  padding: 2%;
+}
+
+.formButton {
+  width: 200px;
+  height:50px;
+  background-color: #82BD49;
+  color: white;
+  margin: 5px auto;
+}
+
+
 

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './styles/App.css';
 import axios from 'axios';
 import firebase from './data/firebase';
+import Preloader from './components/Preloader';
 import LandingPage from './components/LandingPage';
 import Maze from './components/Maze'
 import ResultsPage from './components/ResultsPage';
@@ -12,6 +13,7 @@ class App extends Component {
     super();
 
     this.state = {
+      isPreloaderShown: true,
       isLandingShown: true,
       isMazeShown: false,
       isResultsShown: false,
@@ -107,18 +109,21 @@ class App extends Component {
         });
       }
     });
-
-
-    
   }
 
-  
+  componentDidMount(){
+    setTimeout(()=> { 
+      this.setState({
+        isPreloaderShown: false,
+      })
+    }, 2300);
+  }
   
   render(){
     return (
       <div className="gameShell">
+        {this.state.isPreloaderShown ? <Preloader /> : null}
         <div className="App wrapper">
-          {/* {this.state.isLandingShown && this.state.isMazeShown === false && this.state.isResultsShown === false ? <LandingPage /> : null } */}
           {this.state.isLandingShown ? <LandingPage storeUserQuestion={this.storeUserQuestion} storeUserName={this.storeUserName} />
           : this.state.isMazeShown ? <Maze updatePage={this.updateResult}/>
           : this.state.isResultsShown ? <ResultsPage quote={this.state.quote} userName={this.state.name} updatePage={this.replay}/>

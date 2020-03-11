@@ -22,7 +22,6 @@ body {
   padding: 0;
 }
 
-
 img {
   /* height:auto will ensure the image's dimensions are consistent throughout its parent's varying width */
   width: 100%;
@@ -64,18 +63,52 @@ button {
 }
 
 .gameShell {
-  background-color: #298776;
+  background-color: #000000;
   height: 100vh;
   position: relative;
 }
 
 .App {
-  background-color: #c9c9c9;
-  height: 80%;
+  background-color: #3F3F3F;
+  height: 100%;
   border: 10px grey solid;
 }
 
-.controller {
-  background-color: #50C17F;
+/* .controller {
+  background-color: #3F3F3F;
   height: 20%;
+} */
+
+
+.preloader {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 100;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.preloader img {
+  position: absolute;
+  /* left: -10%; */
+  width: 20%;
+  max-width: 150px;
+  animation: 800ms ease-out infinite loadermation;
+  border-bottom: #50C17F;
+}
+
+@keyframes loadermation{
+  0% {
+    transform: scale(0.75);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.75);
+  }
 }
