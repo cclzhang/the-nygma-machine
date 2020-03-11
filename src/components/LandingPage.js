@@ -88,7 +88,7 @@ class LandingPage extends Component {
       <div className="landingPage">
         {this.state.isPreloaderShown ? <Preloader /> : null}
         <header>
-          <h1 className="headTitle">Nygma Machine</h1>
+          <h1 className="headTitle">The Nygma Machine</h1>
           <h2 className="headInstructions">Ask your question for some advice</h2>
           <div className="headImageContainer">
             <img src={require('../assets/riddlerSprite.png')} alt="the Riddler" className="headImage"/>
