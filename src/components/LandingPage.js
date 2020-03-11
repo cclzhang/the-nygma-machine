@@ -108,7 +108,7 @@ class LandingPage extends Component {
             <label htmlFor="userQuestion" className="formLabel srOnly">Ask your question</label>
             <input 
               type="text" 
-              placeholder="Does the Riddler think I'm cute?" 
+              placeholder="Do I love the Riddler?" 
               id="userQuestion" 
               onChange={this.handleQuestionChange}
               value={this.state.userQuestion}

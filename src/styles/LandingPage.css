@@ -15,7 +15,7 @@
   top: 0;
   right: 0;
   z-index: 100;
-  background-color: rgb(25, 53, 8);
+  background: rgb(25, 53, 8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,9 +56,9 @@ h2 {
 
 .headImageContainer {
   width: 20%;
-  margin: 0 auto;
+  margin: 30px auto;
   opacity: 1;
-  animation: 500ms ease-in infinite flickerImage;
+  /* animation: 500ms ease-in infinite flickerImage; */
 }
 
 form {
@@ -69,8 +69,8 @@ form {
 }
 
 .formInput {
-  width: 70%;
-  min-width: 200px;
+  width: 90%;
+  min-width: 250px;
   max-width: 600px;
   margin: 5px auto;
   padding: 2%;
@@ -79,21 +79,45 @@ form {
   border-bottom: 5px solid white;
   font-family: monospace;
   font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
   text-align: center;
 }
 
+.formInput:focus {
+    border-bottom: 5px solid #805FA0;
+}
+
+.formInput:hover {
+  /* border: 5px solid white; */
+  background: rgba(255, 255, 255, 0.5);
+  color: rgb(25, 53, 8);
+}
+
 .formButton {
+  margin: 35px auto;
   min-width: 200px;
   height:50px;
   color: white;
   border: 5px solid white;
-  margin: 35px auto;
   font-family: monospace;
   text-transform: uppercase;
-  /* letter-spacing: 2px; */
+  letter-spacing: 2px;
   font-weight: bold;
   font-family: 'Press Start 2P', monospace;
 }
+
+.formButton:focus{
+    border: 5px solid #805FA0;
+    color: #805FA0;
+}
+
+.formButton:hover{
+  border: 5px solid rgba(25, 53, 8, 0.5);
+  background: rgba(255, 255, 255, 0.5);
+  color: rgb(25, 53, 8);
+}
+
 
 @keyframes loadermation{
   0% {
@@ -120,4 +144,21 @@ form {
   100% {
     opacity: 1;
   }
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2, 
+  .formInput {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .formButton {
+    font-size: 1.3rem;
+  }
+
 }
