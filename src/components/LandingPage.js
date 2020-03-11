@@ -58,7 +58,7 @@ class LandingPage extends Component {
       this.setState({
         isPreloaderShown: false,
       })
-    }, 2300);
+    }, 2700);
   }
   
   render() {

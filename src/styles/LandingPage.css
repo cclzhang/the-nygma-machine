@@ -1,6 +1,9 @@
 .landingPage {
   padding: 100px 10px;
   position: relative;
+  background-color: rgb(25, 53, 8);
+  animation: 3s ease-out infinite flicker;
+  border: 3px solid transparent;
 }
 
 .preloader {
@@ -10,7 +13,8 @@
   top: 0;
   right: 0;
   z-index: 100;
-  background: black;
+  background-color: black;
+  /* animation: 2s ease-out infinite flickerBorder; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,19 +24,7 @@
   width: 20%;
   max-width: 150px;
   animation: 800ms ease-out infinite loadermation;
-  border-bottom: #50C17F;
-}
-
-@keyframes loadermation{
-  0% {
-    transform: scale(0.75);
-  }
-  50% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0.75);
-  }
+  /* border-bottom: #50C17F; */
 }
 
 header {
@@ -70,12 +62,11 @@ form {
   flex-direction: column;
 }
 
-input {
-  background-color: white;
+.formInput {
+  border-bottom: #50C17F;
   width: 70%;
   min-width: 200px;
   max-width: 600px;
-  /* height: 30px;  */
   margin: 5px auto;
   padding: 3%;
 }
@@ -83,10 +74,76 @@ input {
 .formButton {
   width: 200px;
   height:50px;
-  background-color: #82BD49;
+  /* background-color: #82BD49; */
   color: white;
+  border: 2px solid #50C17F;
+  border-radius: 50px;
   margin: 5px auto;
 }
 
+@keyframes loadermation{
+  0% {
+    transform: scale(0.75);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.75);
+  }
+}
 
+@keyframes flicker {
+  0% {
+    /* opacity: 1; */
+    background-color: rgba(25, 53, 8, 1);
+  }
+  10% {
+    /* opacity: 0.3; */
+    background-color: rgba(25, 53, 8, 0.4);
+  }
+  12% {
+    /* opacity: 1; */
+    background-color: rgba(25, 53, 8, 1);
+  }
+  50% {
+    /* opacity: 0.5; */
+    background-color: rgba(25, 53, 8, 0.6);
+  }
+  53% {
+    /* opacity: 1; */
+    background-color: rgba(25, 53, 8, 1);
+  }
+  98% {
+    /* opacity: 0.7; */
+    background-color: rgba(25, 53, 8, 0.8);
+  }
+  100% {
+    /* opacity: 1; */
+    background-color: rgba(25, 53, 8, 1);
+  }
+}
 
+@keyframes flickerBorder {
+  0% {
+    border: 3px solid rgb(80, 193, 127);
+  }
+  10% {
+    border: 3px solid rgba(80, 193, 127, 0.3);
+  }
+  15% {
+    border: 3px solid rgba(80, 193, 127, 0.8);
+  }
+  50% {
+    border: 3px solid rgba(80, 193, 127, 0.5);
+  }
+  55% {
+    border: 3px solid rgba(80, 193, 127, 0.9);
+  }
+  95% {
+    border: 3px solid rgba(80, 193, 127, 0.2);
+  }
+  100% {
+    border: 3px solid rgb(80, 193, 127);
+  }
+}
