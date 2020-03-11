@@ -1,4 +1,6 @@
-
+.landingPage {
+  border: 1px solid green;
+}
 
 main {
   /* I set an explicit height since the app will fit within the viewheight */

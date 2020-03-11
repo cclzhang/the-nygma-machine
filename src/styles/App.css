@@ -62,23 +62,13 @@ button {
   margin: 0 auto;
 }
 
-.gameShell {
-  background-color: #000000;
+.App {
+  background-color: black;
   height: 100vh;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-/* .App {
-  background-color: #3F3F3F;
-  height: 100%;
-  border: 10px grey solid;
-} */
-
-/* .controller {
-  background-color: #3F3F3F;
-  height: 20%;
-} */
-
 
 .preloader {
   height: 100vh;
@@ -89,12 +79,9 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .preloader img {
-  position: absolute;
-  /* left: -10%; */
   width: 20%;
   max-width: 150px;
   animation: 800ms ease-out infinite loadermation;

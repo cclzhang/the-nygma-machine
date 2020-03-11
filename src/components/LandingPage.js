@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import '../styles/LandingPage.css'
 
 class LandingPage extends Component {
@@ -53,7 +53,7 @@ class LandingPage extends Component {
   
   render() {
     return (
-      <Fragment>
+      <div className="landingPage wrapper">
         <header className="head">
           <h1 className="headTitle">Nygma Machine</h1>
           <h2 className="headInstructions">Ask your question for some advice</h2>
@@ -84,7 +84,7 @@ class LandingPage extends Component {
             <button type="submit" onClick={this.clickHandler} className="formButton">Submit</button>
           </form>
         </main>  
-      </Fragment>    
+      </div>  
     )
   }
 }
