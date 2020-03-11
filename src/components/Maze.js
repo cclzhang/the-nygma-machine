@@ -165,19 +165,19 @@ class Maze extends Component {
     this.state.maze.forEach((y, yIndex) => {
       y.forEach((x, xIndex) => {
         if (x === 1) {
-          ctx.fillStyle = "#298776";
+          ctx.fillStyle = "black";
           ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);
         }
         else if (x === 0) {
-          ctx.fillStyle = "white";
+          ctx.fillStyle = "#235304";
           ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);
         } 
-        else if (x === -1) {
-          ctx.fillStyle = "black";
+        else if (x === -1) { 
+          ctx.fillStyle = "darkgrey";
           ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);          
         }
         else if (x === 9) {
-          ctx.fillStyle = "white";
+          ctx.fillStyle = "#235304";
           ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);   
         }
       })
@@ -309,7 +309,7 @@ class Maze extends Component {
   render() {
     return(
       <div className="mazeContainer">
-        <h3 className="mazeTitle">"That one could have been solved by a monkey. But good job, nevertheless."</h3>
+        <h3 className="mazeTitle">This one could be solved by a monkey. But good luck, I guess.</h3>
         {/* maze is styled within maze.js file, not in maze.css */}
         <div className="canvasContainer">
           <canvas ref="canvas" width="1200px" height="600px" className="maze"></canvas>
