@@ -65,6 +65,7 @@ button {
   animation: 2s ease-out infinite flicker;
   /* transform-style: preserve-3d; */
   /* transform: perspective(2500px) rotateY(35deg); */
+    border: 3px solid rgb(25, 53, 8);
 }
 
 .App {
@@ -76,7 +77,8 @@ button {
 }
 
 
-@keyframes flicker {
+
+/* @keyframes flickerBorder {
   0% {
     border: 3px solid rgb(80, 193, 127);
   }
@@ -97,5 +99,36 @@ button {
   }
   100% {
     border: 3px solid rgb(80, 193, 127);
+  }
+} */
+
+@keyframes flicker {
+  0% {
+    /* opacity: 1; */
+    background-color: rgba(25, 53, 8, 1);
+  }
+  10% {
+    /* opacity: 0.3; */
+    background-color: rgba(25, 53, 8, 0.4);
+  }
+  12% {
+    /* opacity: 1; */
+    background-color: rgba(25, 53, 8, 1);
+  }
+  50% {
+    /* opacity: 0.5; */
+    background-color: rgba(25, 53, 8, 0.6);
+  }
+  53% {
+    /* opacity: 1; */
+    background-color: rgba(25, 53, 8, 1);
+  }
+  98% {
+    /* opacity: 0.7; */
+    background-color: rgba(25, 53, 8, 0.8);
+  }
+  100% {
+    /* opacity: 1; */
+    background-color: rgba(25, 53, 8, 1);
   }
 }
