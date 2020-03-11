@@ -107,6 +107,7 @@ class App extends Component {
             isLandingShown: !this.state.isLandingShown,
             isMazeShown: !this.state.isMazeShown,
           });
+          
         })
 
       } else {

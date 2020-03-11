@@ -58,7 +58,9 @@ h2 {
   width: 20%;
   margin: 30px auto;
   opacity: 1;
-  /* animation: 500ms ease-in infinite flickerImage; */
+  min-width: 130px;
+  max-width: 250px;
+  animation: 1s ease-in infinite flickerImage;
 }
 
 form {
@@ -89,14 +91,13 @@ form {
 }
 
 .formInput:hover {
-  /* border: 5px solid white; */
   background: rgba(255, 255, 255, 0.5);
   color: rgb(25, 53, 8);
 }
 
 .formButton {
   margin: 35px auto;
-  min-width: 200px;
+  min-width: 225px;
   height:50px;
   color: white;
   border: 5px solid white;
@@ -107,12 +108,15 @@ form {
   font-family: 'Press Start 2P', monospace;
 }
 
-.formButton:focus{
+.formButton:focus, 
+aside button:focus {
     border: 5px solid #805FA0;
     color: #805FA0;
+    background: rgb(25, 53, 8);
 }
 
-.formButton:hover{
+.formButton:hover, 
+aside button:hover{
   border: 5px solid rgba(25, 53, 8, 0.5);
   background: rgba(255, 255, 255, 0.5);
   color: rgb(25, 53, 8);
@@ -161,4 +165,28 @@ form {
     font-size: 1.3rem;
   }
 
+}
+
+
+/* aside */
+aside {
+  position: relative
+}
+
+aside p {
+  border: 5px solid #805FA0;
+  position: absolute;
+  margin: 0 25px;
+  bottom: 55px;
+  left: 0;
+  color: white;
+  padding: 15px;
+  letter-spacing: 2px;
+  line-height: 1.3;
+  background: rgb(25, 53, 8);
+}
+
+aside button {
+  border: 5px solid transparent;
+  width:50px;
 }

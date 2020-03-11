@@ -26,6 +26,7 @@ class LandingPage extends Component {
       userQuestion: '',
       userQuestionArray: [],
       isPreloaderShown: true,
+      isInfoShown: false,
     }
   }
 
@@ -74,6 +75,12 @@ class LandingPage extends Component {
     };
   }
 
+  infoHandler =()=>{
+    this.setState({
+      isInfoShown: !this.state.isInfoShown,
+    })
+  }
+
   // prevents preloader everytime mount occurs
   componentDidMount() {
     setTimeout(() => {
@@ -116,7 +123,13 @@ class LandingPage extends Component {
             />
             <button type="submit" onClick={this.clickHandler} className="formButton">Submit</button>
           </form>
-        </main>  
+        </main>
+        <aside>
+          <button onClick={this.infoHandler}><img src={require("../assets/info.png")} alt="info box"/></button>
+          {this.state.isInfoShown 
+            ? <p>Ask the Nygma Machine for advice, but first you need to complete the journey.</p> 
+            : null}
+        </aside>
       </div>  
     )
   }
