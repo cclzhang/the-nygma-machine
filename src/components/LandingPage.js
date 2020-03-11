@@ -30,12 +30,13 @@ class LandingPage extends Component {
   }
 
   clickHandler = (e) => {
-    if (this.state.userName === '') {
-      alert('Please enter your name.');
-      return false;
+    e.preventDefault();
+    if (this.state.userName === '' && this.state.userQuestion.length === 0) {
+      alert('The machine requires your name and question!');
+    } else if (this.state.userName === '') {
+      alert('The machine requires your name!');
     } else if (this.state.userQuestion.length === 0) {
-      alert('Please enter a question.');
-      return false;
+      alert('The machine requires a question!');
     } else {
       this.props.storeUserQuestion(e, this.state.userQuestion);
       this.props.storeUserName(e, this.state.userName);
