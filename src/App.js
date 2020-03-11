@@ -43,7 +43,6 @@ class App extends Component {
     // due to flow of app, rather than use router we displayed components using boolen values
     // quote and name keys are used to store values from submit event handler in landing page component, which is sent here (app), followed by results component
     this.state = {
-      isPreloaderShown: true,
       isLandingShown: true,
       isMazeShown: false,
       isResultsShown: false,
@@ -144,14 +143,6 @@ class App extends Component {
       isLandingShown: !this.state.isLandingShown,
     });
   }
-
-  componentDidMount(){
-    setTimeout(()=> { 
-      this.setState({
-        isPreloaderShown: false,
-      })
-    }, 2300);
-  }
   
   // by default, we load landing component
   // all other components naturally render false, which is changed upon user input
@@ -161,7 +152,6 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        {this.state.isPreloaderShown ? <Preloader /> : null}
         {this.state.isLandingShown ? <LandingPage storeUserQuestion={this.storeUserQuestion} storeUserName={this.storeUserName} />
         : this.state.isMazeShown ? <Maze updatePage={this.updateResult}/>
         : this.state.isResultsShown ? <ResultsPage quote={this.state.quote} userName={this.state.name} updatePage={this.replay}/>
