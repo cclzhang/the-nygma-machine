@@ -1,7 +1,45 @@
 .landingPage {
-  border: 1px solid green;
+  padding: 100px 10px;
+  position: relative;
 }
 
+.preloader {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preloader img {
+  width: 20%;
+  max-width: 150px;
+  animation: 800ms ease-out infinite loadermation;
+  border-bottom: #50C17F;
+}
+
+@keyframes loadermation{
+  0% {
+    transform: scale(0.75);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.75);
+  }
+}
+
+header {
+  text-align: center;
+  font-family: 'Poiret One', cursive;
+  color: white;
+}
 main {
   /* I set an explicit height since the app will fit within the viewheight */
   display: flex;
@@ -10,12 +48,6 @@ main {
   align-items: center;
 }
 
-.head {
-  text-align: center;
-  font-family: 'Poiret One', cursive;
-  color: white;
-  padding-top: 10%;
-}
 
 h1 {
   margin: 0;
@@ -32,17 +64,20 @@ h1 {
   margin: 0 auto;
 }
 
-.initialForm {
+form {
+  width: 80%;
   display: flex;
   flex-direction: column;
 }
 
 input {
   background-color: white;
-  width: 400px;
-  height: 30px; 
+  width: 70%;
+  min-width: 200px;
+  max-width: 600px;
+  /* height: 30px;  */
   margin: 5px auto;
-  padding: 2%;
+  padding: 3%;
 }
 
 .formButton {

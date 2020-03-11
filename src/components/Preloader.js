@@ -2,7 +2,7 @@ import React from 'react';
 
 function Preloader () {
     return(
-      <div className="preloader">
+      <div className="preloader wrapper">
         <img src={require('../assets/loading.png')} alt="loading"/>
       </div>
     )
