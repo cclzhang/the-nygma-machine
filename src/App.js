@@ -35,7 +35,7 @@ import ResultsPage from './components/ResultsPage';
 
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
 
     // due to flow of app, rather than use router we displayed components using boolen values
@@ -148,7 +148,7 @@ class App extends Component {
   // landing component will send intial user input here (app) via props
   // after storing in state here (app), it is sent to results page via props
   // completion of maze will send 
-  render(){
+  render() {
     return (
       <div className="App">
         {this.state.isLandingShown ? <LandingPage storeUserQuestion={this.storeUserQuestion} storeUserName={this.storeUserName} />

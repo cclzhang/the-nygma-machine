@@ -5,8 +5,9 @@ import '../styles/ResultsPage.css';
 
 
 class ResultsPage extends Component {
-  constructor(){
+  constructor() {
     super();
+
     this.state = {
       userCompleted: [],
       isLeaderboardShown: false,
@@ -38,7 +39,7 @@ class ResultsPage extends Component {
     this.componentMounted = false;
   }
 
-  toggleLeaderboard = (e)=>{
+  toggleLeaderboard = (e) => {
     e.preventDefault();
     this.setState({
       isLeaderboardShown: !this.state.isLeaderboardShown,
@@ -53,8 +54,7 @@ class ResultsPage extends Component {
           <p className="resultUserName">{`${this.props.userName},`}</p>
           <p className="resultAdvice">{this.props.quote}</p> 
         </div>
-
-        {/* add prevent default action for form*/}
+        
         <form className="form">
           <button onClick={this.props.updatePage} className="formButton">Play Again?</button>
           <button onClick={this.toggleLeaderboard} className="formButton">Leaderboard</button>
