@@ -54,9 +54,13 @@ class ResultsPage extends Component {
           <p className="resultUserName">{`${this.props.userName},`}</p>
           <p className="resultAdvice">{this.props.quote}</p> 
         </div>
+
+        <div className="headImageContainer">
+          <img src={require('../assets/riddlerSprite.png')} alt="the Riddler" className="headImage" />
+        </div>
         
         <form className="form">
-          <button onClick={this.props.updatePage} className="formButton">Play Again?</button>
+          <button onClick={this.props.updatePage} className="formButton">Replay</button>
           <button onClick={this.toggleLeaderboard} className="formButton">Leaderboard</button>
         </form>          
         {this.state.isLeaderboardShown ? <Leaderboard toggleLeaderboard={this.toggleLeaderboard} content={this.state.userCompleted}/> : null}

@@ -4,7 +4,7 @@ import '../styles/Leaderboard.css';
 const Leaderboard = (props) => {
   return (
     <div className="leaderboardContainer">
-      <h2 className="leaderboardHeader">Leaderboard</h2>
+      <h2 className="leaderboardHeader">Those who have conquered the journey</h2>
       <button onClick={props.toggleLeaderboard}>X</button>
       <ul>
         {props.content.map((name, index) => {
