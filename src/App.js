@@ -3,7 +3,6 @@ import './styles/App.css';
 import axios from 'axios';
 import firebase from './data/firebase';
 
-import Preloader from './components/Preloader';
 import LandingPage from './components/LandingPage';
 import Maze from './components/Maze'
 import ResultsPage from './components/ResultsPage';
