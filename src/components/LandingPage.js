@@ -2,10 +2,25 @@ import React, { Component } from 'react';
 import '../styles/LandingPage.css'
 import Preloader from './Preloader';
 
+
+// LandingPage.js breakdown
+// constructor
+// handleNameChange (f)
+// handleQuestionChange (f)
+// clickHandler (f)
+// componentDidMount
+// render
+
+
 class LandingPage extends Component {
   constructor(){
     super();
     
+    // user input will store userName via handleNameChange function
+    // user input will store userQuestion string in variable and convert to array
+    // both userQuestion string and array are stored in state and sent to app component via props
+    // array is trimmed of spaces and used to lookup keywords in app component prior to api call
+    // preloader will load by default
     this.state = {
       userName: '',
       userQuestion: '',
@@ -22,7 +37,7 @@ class LandingPage extends Component {
   
   handleQuestionChange = (e) => {
     const questionString= e.target.value;
-    // taking the question and converting it to an array
+    // taking the question and converting it to an array, removing spaces 
     const questionArray = questionString.trim().split(' ');
     
     this.setState({
@@ -31,6 +46,12 @@ class LandingPage extends Component {
     })
   }
 
+  // upon click event on button:
+    // if name input isn't submitted, alert is given
+    // if question input isn't submitted, alert is given
+    // we look for array length to be 0 for userQuestion
+  // state is set to store userName and userQuestion inputs
+  // state key value pairs are sent to app.js via props to run api call
   clickHandler = (e) => {
     e.preventDefault();
     if (this.state.userName === '' && this.state.userQuestion.length === 0) {
@@ -53,6 +74,7 @@ class LandingPage extends Component {
     };
   }
 
+  // prevents preloader everytime mount occurs
   componentDidMount() {
     setTimeout(() => {
       this.setState({
