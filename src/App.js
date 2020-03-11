@@ -129,6 +129,9 @@ class App extends Component {
       quote: this.state.quote,
     }
     dbRef.push(userDeets);
+    if (dbRef.length > 5) {
+      console.log("bigger than 5")
+    }
 
     this.setState({
       isMazeShown: false,
