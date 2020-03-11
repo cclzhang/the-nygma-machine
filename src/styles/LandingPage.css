@@ -5,16 +5,7 @@
 
 
 .landingPage {
-  width: 100%;
-  padding: 100px 10px;
   position: relative;
-  background-color: rgb(25, 53, 8);
-  animation: 2s ease-out infinite flickerBorder;
-  border: 10px dashed #50C17F;
-  /* font-family: 'Press Start 2P', monospace; */
-  /* font-family: 'Share Tech Mono', monospace; */
-  height: 100%;
-
 }
 
 .preloader {
@@ -24,9 +15,7 @@
   top: 0;
   right: 0;
   z-index: 100;
-  /* background-color: black; */
-    background-color: rgb(25, 53, 8);
-  /* animation: 2s ease-out infinite flickerBorder; */
+  background-color: rgb(25, 53, 8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,12 +25,10 @@
   width: 20%;
   max-width: 150px;
   animation: 800ms ease-out infinite loadermation;
-  /* border-bottom: #50C17F; */
 }
 
 header {
   text-align: center;
-  /* font-family: 'Poiret One', cursive; */
   color: white;
 }
 main {
@@ -54,20 +41,17 @@ main {
 
 
 h1 {
+  font-size: 4.5rem;
+  text-transform: uppercase;
   margin: 0;
-    letter-spacing: 5px;
+  letter-spacing: 5px;
 }
 
-.headTitle {
-  font-size: 5.5rem;
-  /* letter-spacing: 2px; */
-  text-transform: uppercase;
-}
+
 h2 {
-      /* font-family: 'Poiret One', cursive; */
-      font-family: monospace;
-      margin: 20px;
-      text-transform: lowercase;
+  font-family: monospace;
+  margin: 20px;
+  text-transform: lowercase;
 }
 
 .headImageContainer {
@@ -97,18 +81,16 @@ form {
 }
 
 .formButton {
-    min-width: 200px;
-  /* width: 200px; */
+  min-width: 200px;
   height:50px;
-  /* background-color: #82BD49; */
   color: white;
   border: 5px solid white;
-  /* border-radius: 50px; */
   margin: 35px auto;
-    font-family: monospace;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: bold;
+  font-family: monospace;
+  text-transform: uppercase;
+  /* letter-spacing: 2px; */
+  font-weight: bold;
+  font-family: 'Press Start 2P', monospace;
 }
 
 @keyframes loadermation{
@@ -125,31 +107,24 @@ form {
 
 @keyframes flicker {
   0% {
-    /* opacity: 1; */
     background-color: rgba(25, 53, 8, 1);
   }
   10% {
-    /* opacity: 0.3; */
     background-color: rgba(25, 53, 8, 0.4);
   }
   12% {
-    /* opacity: 1; */
     background-color: rgba(25, 53, 8, 1);
   }
   50% {
-    /* opacity: 0.5; */
     background-color: rgba(25, 53, 8, 0.6);
   }
   53% {
-    /* opacity: 1; */
     background-color: rgba(25, 53, 8, 1);
   }
   98% {
-    /* opacity: 0.7; */
     background-color: rgba(25, 53, 8, 0.8);
   }
   100% {
-    /* opacity: 1; */
     background-color: rgba(25, 53, 8, 1);
   }
 }
