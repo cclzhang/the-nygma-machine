@@ -63,7 +63,7 @@ class LandingPage extends Component {
   
   render() {
     return (
-      <div className="landingPage wrapper">
+      <div className="landingPage">
         {this.state.isPreloaderShown ? <Preloader /> : null}
         <header>
           <h1 className="headTitle">Nygma Machine</h1>

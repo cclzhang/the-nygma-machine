@@ -1,9 +1,20 @@
+@font-face {
+  font-family: 'VT323';
+  src: local('VT323'), url(../assets/VT323/VT323-Regular.ttf) format('truetype');
+}
+
+
 .landingPage {
+  width: 100%;
   padding: 100px 10px;
   position: relative;
-  background-color: rgb(25, 53, 8);
-  animation: 3s ease-out infinite flicker;
-  border: 3px solid transparent;
+  /* background-color: rgb(25, 53, 8); */
+  animation: 1s ease-out infinite flickerBorder;
+  border: 10px dashed #50C17F;
+  /* font-family: 'Press Start 2P', monospace; */
+  /* font-family: 'Share Tech Mono', monospace; */
+  height: 100%;
+
 }
 
 .preloader {
@@ -29,7 +40,7 @@
 
 header {
   text-align: center;
-  font-family: 'Poiret One', cursive;
+  /* font-family: 'Poiret One', cursive; */
   color: white;
 }
 main {
@@ -43,12 +54,16 @@ main {
 
 h1 {
   margin: 0;
+    letter-spacing: 5px;
 }
 
 .headTitle {
   font-size: 5.5rem;
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
   text-transform: uppercase;
+}
+h2 {
+      font-family: 'Poiret One', cursive;
 }
 
 .headImageContainer {
@@ -63,12 +78,15 @@ form {
 }
 
 .formInput {
-  border-bottom: #50C17F;
   width: 70%;
   min-width: 200px;
   max-width: 600px;
   margin: 5px auto;
   padding: 3%;
+  color: white;
+  border: none;
+  border-bottom: 3px solid #50C17F;
+  font-family: monospace;
 }
 
 .formButton {
@@ -79,6 +97,7 @@ form {
   border: 2px solid #50C17F;
   border-radius: 50px;
   margin: 5px auto;
+    font-family: monospace;
 }
 
 @keyframes loadermation{
@@ -126,24 +145,24 @@ form {
 
 @keyframes flickerBorder {
   0% {
-    border: 3px solid rgb(80, 193, 127);
+    border: 10px dashed rgb(80, 193, 127);
   }
   10% {
-    border: 3px solid rgba(80, 193, 127, 0.3);
+    border: 10px dashed rgba(80, 193, 127, 0.3);
   }
   15% {
-    border: 3px solid rgba(80, 193, 127, 0.8);
+    border: 10px dashed rgba(80, 193, 127, 0.8);
   }
   50% {
-    border: 3px solid rgba(80, 193, 127, 0.5);
+    border: 10px dashed rgba(80, 193, 127, 0.5);
   }
   55% {
-    border: 3px solid rgba(80, 193, 127, 0.9);
+    border: 10px dashed rgba(80, 193, 127, 0.9);
   }
   95% {
-    border: 3px solid rgba(80, 193, 127, 0.2);
+    border: 10px dashed rgba(80, 193, 127, 0.2);
   }
   100% {
-    border: 3px solid rgb(80, 193, 127);
+    border: 10px dashed rgb(80, 193, 127);
   }
 }
