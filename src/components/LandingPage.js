@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/LandingPage.css'
+import Preloader from './Preloader';
 
 class LandingPage extends Component {
   constructor(){
@@ -9,6 +10,7 @@ class LandingPage extends Component {
       userName: '',
       userQuestion: '',
       userQuestionArray: [],
+      isPreloaderShown: true,
     }
   }
 
@@ -50,11 +52,19 @@ class LandingPage extends Component {
     };
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        isPreloaderShown: false,
+      })
+    }, 2300);
+  }
   
   render() {
     return (
       <div className="landingPage wrapper">
-        <header className="head">
+        {this.state.isPreloaderShown ? <Preloader /> : null}
+        <header>
           <h1 className="headTitle">Nygma Machine</h1>
           <h2 className="headInstructions">Ask your question for some advice</h2>
           <div className="headImageContainer">
@@ -62,7 +72,7 @@ class LandingPage extends Component {
           </div>
         </header>
         <main>
-          <form action="" className="initialForm">
+          <form>
             {/* <label htmlFor="userName" className="formLabel">What's your name?</label> */}
             <input 
               type="text" 

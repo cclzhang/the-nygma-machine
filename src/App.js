@@ -13,7 +13,6 @@ class App extends Component {
     super();
 
     this.state = {
-      isPreloaderShown: true,
       isLandingShown: true,
       isMazeShown: false,
       isResultsShown: false,
@@ -110,19 +109,10 @@ class App extends Component {
       }
     });
   }
-
-  componentDidMount(){
-    setTimeout(()=> { 
-      this.setState({
-        isPreloaderShown: false,
-      })
-    }, 2300);
-  }
   
   render(){
     return (
       <div className="App">
-        {this.state.isPreloaderShown ? <Preloader /> : null}
         {this.state.isLandingShown ? <LandingPage storeUserQuestion={this.storeUserQuestion} storeUserName={this.storeUserName} />
         : this.state.isMazeShown ? <Maze updatePage={this.updateResult}/>
         : this.state.isResultsShown ? <ResultsPage quote={this.state.quote} userName={this.state.name} updatePage={this.replay}/>

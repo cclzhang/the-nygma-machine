@@ -58,8 +58,10 @@ button {
 
 .wrapper {
   max-width: 1200px;
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
+  border: 1px solid green;
+  border-radius: 30px;
 }
 
 .App {
@@ -70,7 +72,7 @@ button {
   align-items: center;
 }
 
-.preloader {
+/* .preloader {
   height: 100vh;
   width: 100vw;
   position: absolute;
@@ -79,6 +81,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid green;
 }
 
 .preloader img {
@@ -98,4 +101,4 @@ button {
   100% {
     transform: scale(0.75);
   }
-}
+} */
