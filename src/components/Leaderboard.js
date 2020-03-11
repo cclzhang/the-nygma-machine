@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import '../styles/Leaderboard.css';
 
 const Leaderboard = (props) => {
-    return (
+  return (
+    <div className="leaderboardContainer">
+      <h2 className="leaderboardHeader">Leaderboard</h2>
+      <button onClick={props.toggleLeaderboard}>X</button>
       <ul>
         {props.content.map((name, index) => {
           return (
@@ -9,7 +13,8 @@ const Leaderboard = (props) => {
           )
         })}
       </ul>
-    )
+    </div>
+  )
 }
 
 export default Leaderboard;

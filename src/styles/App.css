@@ -63,11 +63,10 @@ button {
   margin: 0 auto;
 }
 
-
-
 .gameShell {
   background-color: #298776;
   height: 100vh;
+  position: relative;
 }
 
 .App {
