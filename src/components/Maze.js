@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import '../styles/Maze.css'
 
-
 // Maze.js breakdown
 // constructor
 // canvas setup (f)
@@ -11,7 +10,6 @@ import '../styles/Maze.css'
 // componentUnMount
 // componentDidUpdate
 // render
-
 
 class Maze extends Component {
   constructor() {
@@ -44,7 +42,6 @@ class Maze extends Component {
       touchendY: 0,
     }
   }
-
 
   // canvas setup
   updateMaze = () => {
@@ -80,7 +77,6 @@ class Maze extends Component {
       })
     })
   }
-
 
   // move player function
   movePlayer = (e) => {
@@ -304,6 +300,7 @@ class Maze extends Component {
         {/* maze is styled within maze.js file, not in maze.css */}
         <div className="canvasContainer">
           <canvas ref="canvas" width="1200px" height="600px" className="maze"></canvas>
+          {/* div is hidden because we need to get the batman sprite image on the page before we can paint it on the canvas */}
           <div className="hidden">
             <img src={require("../assets/batmanSprite.png")} alt="batman" ref="img" className="batman"/>
           </div>
