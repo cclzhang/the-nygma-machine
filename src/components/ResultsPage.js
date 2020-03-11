@@ -49,6 +49,7 @@ class ResultsPage extends Component {
   render() {
     return (
       <div className="resultContainer">
+        <h2 className="resultTitle">The Nygma Machine Says... </h2>
         <div className="resultContent">
           <img src="" alt="" className="resultSprite" />
           <p className="resultUserName">{`${this.props.userName},`}</p>
