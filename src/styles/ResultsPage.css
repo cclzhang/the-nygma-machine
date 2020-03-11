@@ -66,3 +66,22 @@
     box-shadow: none;
   }
 }
+
+@media (max-width: 500px) {
+  .resultContainer {
+    margin-top: 80px;
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+    line-height: 2.5rem;
+  }
+
+  .resultUserName {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  .resultAdvice {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+}
