@@ -107,66 +107,6 @@ form {
   }
 }
 
-@keyframes flicker {
-  0% {
-    background-color: rgba(25, 53, 8, 1);
-  }
-  10% {
-    background-color: rgba(25, 53, 8, 0.4);
-  }
-  12% {
-    background-color: rgba(25, 53, 8, 1);
-  }
-  50% {
-    background-color: rgba(25, 53, 8, 0.6);
-  }
-  53% {
-    background-color: rgba(25, 53, 8, 1);
-  }
-  98% {
-    background-color: rgba(25, 53, 8, 0.8);
-  }
-  100% {
-    background-color: rgba(25, 53, 8, 1);
-  }
-}
-
-@keyframes flickerBorder {
-  0% {
-    border: 10px dashed rgb(80, 193, 127);
-  }
-  10% {
-    border: 10px solid rgba(80, 193, 127, 0.5);
-  }
-  20% {
-    border: 10px dashed rgba(80, 193, 127, 1);
-  }
-  30% {
-    border: 10px solid rgba(80, 193, 127, 0.5);
-  }
-  40% {
-    border: 10px dashed rgba(80, 193, 127, 1);
-  }
-  50% {
-    border: 10px solid rgba(80, 193, 127, 0.5);
-  }
-  60% {
-    border: 10px dashed rgba(80, 193, 127, 1);
-  }
-  70% {
-    border: 10px solid rgba(80, 193, 127, 0.5);
-  }
-  80% {
-    border: 10px dashed rgba(80, 193, 127, 1);
-  }
-  90% {
-    border: 10px solid rgba(80, 193, 127, 0.5);
-  }
-  100% {
-    border: 10px dashed rgb(80, 193, 127);
-  }
-}
-
 @keyframes flickerImage {
   0% {
     opacity: 1;
