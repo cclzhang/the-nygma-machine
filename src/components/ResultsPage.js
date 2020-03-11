@@ -23,13 +23,14 @@ class ResultsPage extends Component {
       const info = response.val();
       const userName = [];
       for (let key in info) {
-        userName.push(info[key].name);
+        userName.unshift(info[key].name);
       }
+      const recentUsers = userName.slice(0, 5);
 
       // state updates only if component has been mounted - needed to prevent potential memory leak (state updates after component has been unmounted --> received warning)
       if (this.componentMounted) {
         this.setState({
-          userCompleted: userName,
+          userCompleted: recentUsers,
         })
       }
     })
