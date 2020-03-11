@@ -174,7 +174,9 @@ class Maze extends Component {
         } 
         else if (x === -1) { 
           ctx.fillStyle = "darkgrey";
-          ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);          
+          ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);  
+          // const img = '../assets/batmanSprite.png'
+          // ctx.drawImage(img, 40, 40);        
         }
         else if (x === 9) {
           ctx.fillStyle = "#235304";
