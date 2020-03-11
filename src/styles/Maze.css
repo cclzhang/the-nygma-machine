@@ -7,8 +7,19 @@
   align-items: center;
 }
 
+.mazeTitle {
+  color: white;
+  font-family: 'Poiret One', cursive;
+  font-size: 2.5rem;
+  letter-spacing: 1.5px;
+  line-height: 3.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+  animation: textFlicker 5s infinite;
+}
+
 canvas {
-  margin: 20px;
+  /* margin: 20px; */
   width: 100%;
 }
 
@@ -23,8 +34,23 @@ canvas {
   margin: 0 auto;
 }
 
-/* .maze button {
-  border: 2px solid pink;
-  padding: 10px;
-} */
+@keyframes textFlicker {
+  0%, 14%, 16%, 29%, 31%, 49%, 51%, 79%, 81%, 100% {
+        text-shadow:
+            -0.1rem -0.1em 1rem #49ad0b,
+            0.1rem 0.1rem 1rem #49ad0b,
+            0 0 2rem #49ad0b,
+            0 0 4rem #49ad0b,
+            0 0 6rem #49ad0b,
+            0 0 8rem #49ad0b,
+            0 0 10rem #49ad0b;
+  }
+
+  15%, 30%, 50%, 80% {
+        text-shadow: none;
+        box-shadow: none;
+    }
+}
+  
+
 
