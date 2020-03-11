@@ -1,9 +1,20 @@
+@font-face {
+  font-family: 'VT323';
+  src: local('VT323'), url(../assets/VT323/VT323-Regular.ttf) format('truetype');
+}
+
+
 .landingPage {
+  width: 100%;
   padding: 100px 10px;
   position: relative;
   background-color: rgb(25, 53, 8);
-  animation: 3s ease-out infinite flicker;
-  border: 3px solid transparent;
+  animation: 2s ease-out infinite flickerBorder;
+  border: 10px dashed #50C17F;
+  /* font-family: 'Press Start 2P', monospace; */
+  /* font-family: 'Share Tech Mono', monospace; */
+  height: 100%;
+
 }
 
 .preloader {
@@ -13,7 +24,8 @@
   top: 0;
   right: 0;
   z-index: 100;
-  background-color: black;
+  /* background-color: black; */
+    background-color: rgb(25, 53, 8);
   /* animation: 2s ease-out infinite flickerBorder; */
   display: flex;
   justify-content: center;
@@ -29,7 +41,7 @@
 
 header {
   text-align: center;
-  font-family: 'Poiret One', cursive;
+  /* font-family: 'Poiret One', cursive; */
   color: white;
 }
 main {
@@ -43,12 +55,19 @@ main {
 
 h1 {
   margin: 0;
+    letter-spacing: 5px;
 }
 
 .headTitle {
   font-size: 5.5rem;
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
   text-transform: uppercase;
+}
+h2 {
+      /* font-family: 'Poiret One', cursive; */
+      font-family: monospace;
+      margin: 20px;
+      text-transform: lowercase;
 }
 
 .headImageContainer {
@@ -60,25 +79,36 @@ form {
   width: 80%;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .formInput {
-  border-bottom: #50C17F;
   width: 70%;
   min-width: 200px;
   max-width: 600px;
   margin: 5px auto;
-  padding: 3%;
+  padding: 2%;
+  color: white;
+  border: none;
+  border-bottom: 5px solid white;
+  font-family: monospace;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .formButton {
-  width: 200px;
+    min-width: 200px;
+  /* width: 200px; */
   height:50px;
   /* background-color: #82BD49; */
   color: white;
-  border: 2px solid #50C17F;
-  border-radius: 50px;
-  margin: 5px auto;
+  border: 5px solid white;
+  /* border-radius: 50px; */
+  margin: 35px auto;
+    font-family: monospace;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
 }
 
 @keyframes loadermation{
@@ -126,24 +156,36 @@ form {
 
 @keyframes flickerBorder {
   0% {
-    border: 3px solid rgb(80, 193, 127);
+    border: 10px dashed rgb(80, 193, 127);
   }
   10% {
-    border: 3px solid rgba(80, 193, 127, 0.3);
+    border: 10px solid rgba(80, 193, 127, 0.5);
   }
-  15% {
-    border: 3px solid rgba(80, 193, 127, 0.8);
+  20% {
+    border: 10px dashed rgba(80, 193, 127, 1);
+  }
+  30% {
+    border: 10px solid rgba(80, 193, 127, 0.5);
+  }
+  40% {
+    border: 10px dashed rgba(80, 193, 127, 1);
   }
   50% {
-    border: 3px solid rgba(80, 193, 127, 0.5);
+    border: 10px solid rgba(80, 193, 127, 0.5);
   }
-  55% {
-    border: 3px solid rgba(80, 193, 127, 0.9);
+  60% {
+    border: 10px dashed rgba(80, 193, 127, 1);
   }
-  95% {
-    border: 3px solid rgba(80, 193, 127, 0.2);
+  70% {
+    border: 10px solid rgba(80, 193, 127, 0.5);
+  }
+  80% {
+    border: 10px dashed rgba(80, 193, 127, 1);
+  }
+  90% {
+    border: 10px solid rgba(80, 193, 127, 0.5);
   }
   100% {
-    border: 3px solid rgb(80, 193, 127);
+    border: 10px dashed rgb(80, 193, 127);
   }
 }
