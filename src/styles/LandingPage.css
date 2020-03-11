@@ -8,7 +8,7 @@
   width: 100%;
   padding: 100px 10px;
   position: relative;
-  /* background-color: rgb(25, 53, 8); */
+  background-color: rgb(25, 53, 8);
   animation: 1s ease-out infinite flickerBorder;
   border: 10px dashed #50C17F;
   /* font-family: 'Press Start 2P', monospace; */
@@ -24,7 +24,8 @@
   top: 0;
   right: 0;
   z-index: 100;
-  background-color: black;
+  /* background-color: black; */
+    background-color: rgb(25, 53, 8);
   /* animation: 2s ease-out infinite flickerBorder; */
   display: flex;
   justify-content: center;
@@ -63,7 +64,10 @@ h1 {
   text-transform: uppercase;
 }
 h2 {
-      font-family: 'Poiret One', cursive;
+      /* font-family: 'Poiret One', cursive; */
+      font-family: monospace;
+      margin: 20px;
+      text-transform: lowercase;
 }
 
 .headImageContainer {
@@ -75,6 +79,7 @@ form {
   width: 80%;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .formInput {
@@ -82,22 +87,28 @@ form {
   min-width: 200px;
   max-width: 600px;
   margin: 5px auto;
-  padding: 3%;
+  padding: 2%;
   color: white;
   border: none;
-  border-bottom: 3px solid #50C17F;
+  border-bottom: 5px solid white;
   font-family: monospace;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .formButton {
-  width: 200px;
+    min-width: 200px;
+  /* width: 200px; */
   height:50px;
   /* background-color: #82BD49; */
   color: white;
-  border: 2px solid #50C17F;
-  border-radius: 50px;
-  margin: 5px auto;
+  border: 5px solid white;
+  /* border-radius: 50px; */
+  margin: 35px auto;
     font-family: monospace;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
 }
 
 @keyframes loadermation{
