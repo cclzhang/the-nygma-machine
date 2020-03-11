@@ -66,7 +66,7 @@ class Maze extends Component {
           ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);
         }
         else if (x === 0) {
-          ctx.fillStyle = "#235304";
+          ctx.fillStyle = "#193508";
           ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);
         }
         else if (x === -1) {
@@ -76,7 +76,7 @@ class Maze extends Component {
           // ctx.drawImage(img, 40, 40);        
         }
         else if (x === 9) {
-          ctx.fillStyle = "#235304";
+          ctx.fillStyle = "#193508";
           ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);
         }
       })
@@ -302,6 +302,7 @@ class Maze extends Component {
     return(
       <div className="mazeContainer">
         <h3 className="mazeTitle">This one could be solved by a monkey. But good luck, I guess.</h3>
+          <p className="mazeInstructions">Use arrow or WASD keys to navigate on desktop, swipe on tablet or mobile.</p>
         {/* maze is styled within maze.js file, not in maze.css */}
         <div className="canvasContainer">
           <canvas ref="canvas" width="1200px" height="600px" className="maze"></canvas>
