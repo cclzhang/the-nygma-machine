@@ -31,7 +31,6 @@ import ResultsPage from './components/ResultsPage';
   // api call and resulting actions
 // firebase store (f)
 // replay (f)
-// preloader (f)
 // render
 
 
@@ -121,6 +120,7 @@ class App extends Component {
     });
   }
 
+  // function will store userName upon maze completion
   updateResult = () => {
     const dbRef = firebase.database().ref();
     const userDeets = {
