@@ -50,6 +50,7 @@ class Maze extends Component {
   updateMaze = () => {
     const canvas = this.refs.canvas;
     const ctx = canvas.getContext('2d');
+    const img = this.refs.img;
 
     // used a forEach nbd
     // nested forEach iterates through nested array
@@ -70,10 +71,11 @@ class Maze extends Component {
           ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);
         }
         else if (x === -1) {
-          ctx.fillStyle = "darkgrey";
-          ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);
-          // const img = '../assets/batmanSprite.png'
-          // ctx.drawImage(img, 40, 40);        
+          //ctx.fillStyle = "darkgrey";
+          //ctx.fillStyle = ctx.createPattern(img, 'no-repeat');    
+          ctx.drawImage(img, xIndex * 40, yIndex * 40, 40, 40);
+          //ctx.fillRect(xIndex * 40, yIndex * 40, 40, 40);
+          // ctx.drawImage(img, 40, 40);    
         }
         else if (x === 9) {
           ctx.fillStyle = "#193508";
@@ -306,6 +308,9 @@ class Maze extends Component {
         {/* maze is styled within maze.js file, not in maze.css */}
         <div className="canvasContainer">
           <canvas ref="canvas" width="1200px" height="600px" className="maze"></canvas>
+          <div className="hidden">
+            <img src={require("../assets/batmanSprite.png")} alt="batman" ref="img" className="batman"/>
+          </div>
         </div>
       </div>
     )
