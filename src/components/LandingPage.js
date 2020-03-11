@@ -13,7 +13,7 @@ import Preloader from './Preloader';
 
 
 class LandingPage extends Component {
-  constructor(){
+  constructor() {
     super();
     
     // user input will store userName via handleNameChange function
@@ -96,7 +96,7 @@ class LandingPage extends Component {
         </header>
         <main>
           <form>
-            {/* <label htmlFor="userName" className="formLabel">What's your name?</label> */}
+            <label htmlFor="userName" className="formLabel srOnly">What's your name?</label>
             <input 
               type="text" 
               placeholder="Batman" 
@@ -105,7 +105,7 @@ class LandingPage extends Component {
               value={this.state.userName}
               className="formInput"
             />
-            {/* <label htmlFor="userQuestion" className="formLabel">Ask your question</label> */}
+            <label htmlFor="userQuestion" className="formLabel srOnly">Ask your question</label>
             <input 
               type="text" 
               placeholder="Does the Riddler think I'm cute?" 
