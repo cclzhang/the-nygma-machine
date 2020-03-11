@@ -5,14 +5,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 5%;
 }
 
 canvas {
   margin: 20px;
+  width: 100%;
 }
 
-.maze button {
+.mazeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.canvasContainer {
+  margin: 0 auto;
+}
+
+/* .maze button {
   border: 2px solid pink;
   padding: 10px;
-}
+} */
+
