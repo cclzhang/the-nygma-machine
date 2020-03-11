@@ -19,7 +19,6 @@
 }
 
 canvas {
-  /* margin: 20px; */
   width: 100%;
 }
 
@@ -36,21 +35,19 @@ canvas {
 
 @keyframes textFlicker {
   0%, 14%, 16%, 29%, 31%, 49%, 51%, 79%, 81%, 100% {
-        text-shadow:
-            -0.1rem -0.1em 1rem #49ad0b,
-            0.1rem 0.1rem 1rem #49ad0b,
-            0 0 2rem #49ad0b,
-            0 0 4rem #49ad0b,
-            0 0 6rem #49ad0b,
-            0 0 8rem #49ad0b,
-            0 0 10rem #49ad0b;
+    text-shadow:
+      -0.1rem -0.1em 1rem #49ad0b,
+      0.1rem 0.1rem 1rem #49ad0b,
+      0 0 2rem #49ad0b,
+      0 0 4rem #49ad0b,
+      0 0 6rem #49ad0b,
+      0 0 8rem #49ad0b,
+      0 0 10rem #49ad0b;
   }
 
   15%, 30%, 50%, 80% {
-        text-shadow: none;
-        box-shadow: none;
-    }
+    text-shadow: none;
+    box-shadow: none;
+  }
 }
-  
-
 
