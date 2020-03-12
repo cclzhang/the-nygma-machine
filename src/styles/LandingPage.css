@@ -6,6 +6,8 @@
 
 .landingPage {
   position: relative;
+  height: 100%;
+  padding: 10px 0;
 }
 
 .preloader {
@@ -52,7 +54,7 @@ h2 {
   font-family: monospace;
   margin: 20px;
   text-transform: lowercase;
-  color: green;
+  /* color: green; */
 }
 
 .headImageContainer {
