@@ -77,4 +77,8 @@ canvas {
     letter-spacing: 1.5px;
     line-height: 2.5rem;
   }
+
+  .mazeContainer {
+    height: 60vh;
+  }
 }
