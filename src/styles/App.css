@@ -63,3 +63,9 @@ button {
   justify-content: center;
   align-items: center;
 }
+
+@media (max-width: 800px) {
+  .App {
+    height: 70vh;
+  }
+}
