@@ -36,9 +36,7 @@ canvas {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* margin-top: 30px; */
-  height: 70vh;
-  overflow: hidden;
+  margin-top: 30px;
 }
 
 .canvasContainer {
@@ -68,17 +66,5 @@ canvas {
   15%, 30%, 50%, 80% {
   text-shadow: none;
   box-shadow: none;
-  }
-}
-
-@media (max-width: 520px){
-  .mazeTitle {
-    font-size: 1.2rem;
-    letter-spacing: 1.5px;
-    line-height: 2.5rem;
-  }
-
-  .mazeContainer {
-    height: 70vh;
   }
 }
