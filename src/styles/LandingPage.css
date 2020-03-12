@@ -81,6 +81,7 @@ form {
   padding: 2%;
   color: white;
   border: none;
+  border-radius: 0;
   border-bottom: 5px solid white;
   font-family: monospace;
   font-size: 2rem;

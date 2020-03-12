@@ -67,6 +67,6 @@ button {
 
 @media (max-width: 800px) {
   .App {
-    height: 70vh;
+    height: 80vh;
   }
 }
