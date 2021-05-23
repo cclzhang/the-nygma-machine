@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/theNygmaMachine/static/css/main.32b344a7.chunk.css",
+    "main.js": "/theNygmaMachine/static/js/main.9b94957e.chunk.js",
+    "main.js.map": "/theNygmaMachine/static/js/main.9b94957e.chunk.js.map",
+    "runtime-main.js": "/theNygmaMachine/static/js/runtime-main.024e3795.js",
+    "runtime-main.js.map": "/theNygmaMachine/static/js/runtime-main.024e3795.js.map",
+    "static/js/2.d5c9f986.chunk.js": "/theNygmaMachine/static/js/2.d5c9f986.chunk.js",
+    "static/js/2.d5c9f986.chunk.js.map": "/theNygmaMachine/static/js/2.d5c9f986.chunk.js.map",
+    "index.html": "/theNygmaMachine/index.html",
+    "static/css/main.32b344a7.chunk.css.map": "/theNygmaMachine/static/css/main.32b344a7.chunk.css.map",
+    "static/js/2.d5c9f986.chunk.js.LICENSE.txt": "/theNygmaMachine/static/js/2.d5c9f986.chunk.js.LICENSE.txt",
+    "static/media/LandingPage.css": "/theNygmaMachine/static/media/VT323-Regular.bddd705e.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.024e3795.js",
+    "static/js/2.d5c9f986.chunk.js",
+    "static/css/main.32b344a7.chunk.css",
+    "static/js/main.9b94957e.chunk.js"
+  ]
+}
