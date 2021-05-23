@@ -1,5 +1,4 @@
-# [The Nygma Machine](https://cclzhang.github.io/the-nygma-machine/)
-
+# [The Nygma Machine](https://bcjm.github.io/theNygmaMachine/)
 Find an answer to any question you have.
 
 ## License
